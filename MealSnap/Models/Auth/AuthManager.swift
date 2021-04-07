@@ -6,36 +6,80 @@
 //
 
 import Foundation
+import Amplify
 
 struct AuthUserDetail {
     let userId: String
     let userName: String
 }
 
+typealias AuthOperationListender = (Result<Bool, AuthError>) -> Void
+
+enum RestoreUserError : Error {
+    case NotLoggedIn
+}
+
+typealias RestoreUserCompletion = (Result<Bool, Error>) -> Void
+
 struct AuthManager {
-    private static var isLoggedIn = false
-    
-    private func setIsLoggedIn(to value: Bool){
-        AuthManager.isLoggedIn = value
+    static func login(username: String, password: String, completion: @escaping(AuthOperationListender)) {
+        Amplify.Auth.signIn(username: username, password: password) { result in
+            switch result {
+            case .success:
+                self.notifyAuthStateChange()
+                completion(.success(true))
+            case .failure(let error):
+                // TODO: Custom and Selective Error Handling
+                completion(.failure(error))
+            }
+        }
     }
     
-    static func login(email: String, password: String) {
-        AuthManager.isLoggedIn = true
-        self.notifyAuthStateChange()
+    static func restoreSavedUser(completion: @escaping(RestoreUserCompletion)) {
+        Amplify.Auth.fetchAuthSession { result in
+            switch result {
+            case .success(let session):
+                if(session.isSignedIn){
+                    self.notifyAuthStateChange()
+                    completion(.success(true))
+                }
+                else{
+                    completion(.failure(RestoreUserError.NotLoggedIn))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
     
-    static func signup(email: String, username: String, password: String){
-        AuthManager.isLoggedIn = true
-        self.notifyAuthStateChange()
+    static func signup(email: String, username: String, password: String, completion: @escaping(AuthOperationListender)){
+        let userAttributes = [AuthUserAttribute(.email, value: email)]
+        let options = AuthSignUpRequest.Options(userAttributes: userAttributes)
+        Amplify.Auth.signUp(username: username, password: password, options: options) { result in
+            switch result {
+            case .success:
+                completion(.success(true))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
     
-    static func logout() {
-        AuthManager.isLoggedIn = false
+    static func logout(listener: @escaping(AuthOperationListender)) {
+        Amplify.Auth.signOut(){result in
+            switch result {
+            case .success:
+                notifyAuthStateChange()
+                listener(.success(true))
+            case .failure(let err):
+                listener(.failure(err))
+            }
+        }
         self.notifyAuthStateChange()
     }
     
     static func isAuthenticated() -> Bool {
-        return AuthManager.isLoggedIn
+        return Amplify.Auth.getCurrentUser() != nil
     }
 }
 
@@ -46,9 +90,9 @@ protocol AuthStateChangeHandler : class {
 extension AuthManager {
     private static var authChangeObservers = [ObjectIdentifier : AuthStateChangeHandler]()
     
-    private static func notifyAuthStateChange() {
+    private static func notifyAuthStateChange(with newState: Bool = AuthManager.isAuthenticated()) {
         for (_, observer) in AuthManager.authChangeObservers {
-            observer.onAuthStateChange(isAuthenticated: self.isLoggedIn)
+            observer.onAuthStateChange(isAuthenticated: newState)
         }
     }
     
