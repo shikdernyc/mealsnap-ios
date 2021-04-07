@@ -7,6 +7,7 @@ target 'MealSnap' do
 
   # Pods for MealSnap
   pod 'Amplify'
+  pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
 
   target 'MealSnapTests' do
     inherit! :search_paths
