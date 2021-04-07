@@ -7,25 +7,61 @@
 
 import UIKit
 
+struct TempUserInfo {
+    static let username = "defaultuser"
+    static let password = "P@5sword"
+}
+
 class LoginViewController: UIViewController {
     static let StoryboardId = "login_vc"
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+    @IBOutlet weak var errorMessageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.text = TempUserInfo.username
+        passwordTextField.text = TempUserInfo.password
         print("Login Page Loaded")
         // Do any additional setup after loading the view.
     }
     
+    func showError(message: String) -> Void {
+        DispatchQueue.main.async {
+            self.errorMessageLabel.text = message
+            self.errorMessageLabel.isHidden = false
+        }
+    }
+    
+    func closeErrorMessage() -> Void {
+        DispatchQueue.main.async {
+            if self.errorMessageLabel.isHidden == false {
+                self.errorMessageLabel.isHidden = true
+            }
+        }
+    }
+    
     @IBAction func handleLogin() {
-//        guard let rootAuthController = storyboard?.instantiateViewController(identifier: "root_tab_vc") else {
-//            return
-//        }
-//        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(controller: rootAuthController)
-        AuthManager.login(email: "", password: "")
+        self.closeErrorMessage()
+        guard let email = emailTextField.text else {
+            self.showError(message: "Email is required")
+            return
+        }
+        guard let password = passwordTextField.text else {
+            self.showError(message: "Password is required")
+            return
+        }
+        AuthManager.login(username: email, password: password) { result in
+            switch result{
+            case.failure(let error):
+                // TODO: Set Error Message
+                self.showError(message: error.errorDescription)
+                return
+            default:
+                return
+            }
+        };
     }
     
 
