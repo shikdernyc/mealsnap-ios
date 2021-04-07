@@ -7,23 +7,48 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
-
+class MainViewController: UIViewController, AuthStateChangeHandler {
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        AuthManager.onAuthStateChange(run: self)
+        self.fetchCurrentAuthSession()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func onAuthStateChange(isAuthenticated: Bool) {
+        print("Onboarding Auth State: \(isAuthenticated)")
+        if(isAuthenticated){
+            self.navToAuthVC()
+        }else{
+            self.navToOnboardingVC()
+        }
     }
-    */
-
+    
+    private func navToAuthVC() {
+        DispatchQueue.main.async {
+            guard let rootAuthController = self.storyboard?.instantiateViewController(identifier: StoryboardId.AuthTabNavigationController.rawValue) else {
+                return
+            }
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(controller: rootAuthController)
+        }
+    }
+    
+    private func navToOnboardingVC() {
+        DispatchQueue.main.async {
+            guard let onboardingVC = self.storyboard?.instantiateViewController(identifier: StoryboardId.OnboardingNavigationController.rawValue) else {
+                return
+            }
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(controller: onboardingVC)
+        }
+    }
+    
+    func fetchCurrentAuthSession() {
+        AuthManager.restoreSavedUser() { result in
+            switch result {
+            case .success:
+                print("Restored User")
+            case .failure:
+                self.navToOnboardingVC()
+            }
+        }
+    }
 }
