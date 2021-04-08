@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,9 +22,12 @@
 		5A40EB2E26080CD8002493FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A40EB2C26080CD8002493FA /* LaunchScreen.storyboard */; };
 		5A40EB3926080CD8002493FA /* MealSnapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40EB3826080CD8002493FA /* MealSnapTests.swift */; };
 		5A40EB4426080CD8002493FA /* MealSnapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40EB4326080CD8002493FA /* MealSnapUITests.swift */; };
+		5A54A82C260B055C00DD4A42 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A54A82A260B055C00DD4A42 /* awsconfiguration.json */; };
+		5A54A82D260B055C00DD4A42 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A54A82B260B055C00DD4A42 /* amplifyconfiguration.json */; };
 		5A55FF1C260AE61A00438984 /* StoryboardId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A55FF1B260AE61A00438984 /* StoryboardId.swift */; };
 		5A734FB32609B8180008B576 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A734FB22609B8180008B576 /* SettingsViewController.swift */; };
 		5A734FBE2609BA520008B576 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A734FBD2609BA520008B576 /* AuthManager.swift */; };
+		5A9475F2260BEF7F00C22186 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9475F1260BEF7F00C22186 /* MainViewController.swift */; };
 		A915414E3B5B052531C143BE /* Pods_MealSnapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1753A9BA492E237D404BEDB9 /* Pods_MealSnapTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,9 +72,12 @@
 		5A40EB3F26080CD8002493FA /* MealSnapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealSnapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A40EB4326080CD8002493FA /* MealSnapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSnapUITests.swift; sourceTree = "<group>"; };
 		5A40EB4526080CD8002493FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A54A82A260B055C00DD4A42 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		5A54A82B260B055C00DD4A42 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		5A55FF1B260AE61A00438984 /* StoryboardId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardId.swift; sourceTree = "<group>"; };
 		5A734FB22609B8180008B576 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5A734FBD2609BA520008B576 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		5A9475F1260BEF7F00C22186 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		730F89369E65AC50691BA03D /* Pods-MealSnap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealSnap.debug.xcconfig"; path = "Target Support Files/Pods-MealSnap/Pods-MealSnap.debug.xcconfig"; sourceTree = "<group>"; };
 		9AF9BCEA5996DC52B0C12720 /* Pods-MealSnapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealSnapTests.debug.xcconfig"; path = "Target Support Files/Pods-MealSnapTests/Pods-MealSnapTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E73CFB796DDB256D289BF8FE /* Pods-MealSnap-MealSnapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealSnap-MealSnapUITests.debug.xcconfig"; path = "Target Support Files/Pods-MealSnap-MealSnapUITests/Pods-MealSnap-MealSnapUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,7 +123,6 @@
 				9AF9BCEA5996DC52B0C12720 /* Pods-MealSnapTests.debug.xcconfig */,
 				03DF2D438C8C0292E4547200 /* Pods-MealSnapTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -154,16 +159,18 @@
 		5A40EB2026080CD7002493FA /* MealSnap */ = {
 			isa = PBXGroup;
 			children = (
+				5A40EB2A26080CD8002493FA /* Assets.xcassets */,
 				5A55FF1A260AE60300438984 /* Constants */,
 				5A734FBA2609BA160008B576 /* Models */,
 				5A13366B26093746008CC957 /* Components */,
 				5AA583EF260827500009FFEC /* ViewControllers */,
-				5A40EB2126080CD7002493FA /* AppDelegate.swift */,
 				5A40EB2726080CD7002493FA /* Main.storyboard */,
 				5A40EB2C26080CD8002493FA /* LaunchScreen.storyboard */,
+				5A40EB2126080CD7002493FA /* AppDelegate.swift */,
 				5A40EB2326080CD7002493FA /* SceneDelegate.swift */,
-				5A40EB2A26080CD8002493FA /* Assets.xcassets */,
 				5A40EB2F26080CD8002493FA /* Info.plist */,
+				5A54A82B260B055C00DD4A42 /* amplifyconfiguration.json */,
+				5A54A82A260B055C00DD4A42 /* awsconfiguration.json */,
 			);
 			path = MealSnap;
 			sourceTree = "<group>";
@@ -219,6 +226,7 @@
 				5A1336742609418D008CC957 /* GalleryViewController.swift */,
 				5A2E9D6C2609B147003D37C2 /* ExploreViewController.swift */,
 				5A734FB22609B8180008B576 /* SettingsViewController.swift */,
+				5A9475F1260BEF7F00C22186 /* MainViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -341,7 +349,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A54A82C260B055C00DD4A42 /* awsconfiguration.json in Resources */,
 				5A40EB2E26080CD8002493FA /* LaunchScreen.storyboard in Resources */,
+				5A54A82D260B055C00DD4A42 /* amplifyconfiguration.json in Resources */,
 				5A40EB2B26080CD8002493FA /* Assets.xcassets in Resources */,
 				5A40EB2926080CD7002493FA /* Main.storyboard in Resources */,
 			);
@@ -474,6 +484,7 @@
 				5A13366D26093768008CC957 /* Alert.swift in Sources */,
 				5A1336752609418D008CC957 /* GalleryViewController.swift in Sources */,
 				5A55FF1C260AE61A00438984 /* StoryboardId.swift in Sources */,
+				5A9475F2260BEF7F00C22186 /* MainViewController.swift in Sources */,
 				5A13365F26092710008CC957 /* LoginViewController.swift in Sources */,
 				5A40EB2626080CD7002493FA /* Onboarding.swift in Sources */,
 				5A2E9D6D2609B147003D37C2 /* ExploreViewController.swift in Sources */,

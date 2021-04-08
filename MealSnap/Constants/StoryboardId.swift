@@ -8,10 +8,12 @@
 import Foundation
 
 enum StoryboardId : String {
+    case MainViewController = "main_vc"
     case OnboardingNavigationController = "onboarding_nav_vc"
     case OnboardingViewController = "onboarding_vc"
     case LoginViewController = "login_vc"
     case SignupViewController = "signup_vc"
+    case SignupConfirmationViewController = "signup_confirmation_vc"
     case AuthTabNavigationController = "root_tab_vc"
     case GalleryNavigationController = "gallery_nav_vc"
     case GalleryViewController = "gallery_vc"
