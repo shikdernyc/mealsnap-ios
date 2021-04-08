@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct ServiceConfig {
+    static let MealSnapAPIRootURL = "https://dbkw974ay1.execute-api.us-east-1.amazonaws.com/prod"
+}

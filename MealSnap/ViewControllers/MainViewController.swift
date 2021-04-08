@@ -10,6 +10,17 @@ import UIKit
 class MainViewController: UIViewController, AuthStateChangeHandler {
     override func viewDidLoad() {
         super.viewDidLoad()
+        MealSnapAPI.CheckConnection(){result in
+            switch(result) {
+            case .success:
+                print("Connected to MealSnap API")
+                return
+            case .failure(let error):
+                print("Unable to connect to MealSnap API")
+                print(error)
+                return
+            }
+        }
         AuthManager.onAuthStateChange(run: self)
         self.fetchCurrentAuthSession()
     }
