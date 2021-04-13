@@ -7,14 +7,15 @@
 
 import Foundation
 
-struct GalleryImage {
+struct GalleryImage: Decodable {
+    let id: String
     let title: String
     let description: String
     let imageUrl: String
 }
 
 enum UserGalleryError : Error {
-    case APIError
+    case APIError(message: String)
 }
 
 struct UserGallery {
@@ -22,7 +23,7 @@ struct UserGallery {
         title: String,
         description: String,
         imageData: Data,
-        completionHandler: @escaping (Result<GalleryImage, Error>) -> Void) {
+        completionHandler: @escaping (Result<GalleryImage, UserGalleryError>) -> Void) {
         let requestData = [
             "title": title,
             "description": description,
@@ -31,26 +32,27 @@ struct UserGallery {
         // TODO: Call the appropriate route
         MealSnapAPI.PostRequest(route: "/me/gallery/add-entry", body: requestData) {result in
             switch(result){
-            case .success(let data):
-                guard data != nil else {
-                    completionHandler(.failure(UserGalleryError.APIError))
-                    return
-                }
+            case .success(var response):
                 do{
-                    let jsonData = try JSONSerialization.jsonObject(with: data!, options: [])
-                    print(jsonData)
-                    completionHandler(.success(GalleryImage(
-                        title: title, description: description, imageUrl: ""
-                    )))
+                    let galleryImage = try response.parseData() as GalleryImage
+                    print(galleryImage)
+                    completionHandler(.success(galleryImage))
                     return
                 }catch{
                     print("Unable to convert to JSON")
-                    completionHandler(.failure(UserGalleryError.APIError))
+                    completionHandler(.failure(UserGalleryError.APIError(message: "Error Parsing JSON")))
                     return
                 }
             case .failure(let error):
-                completionHandler(.failure(error))
-                return
+                switch error {
+                case .ResponseError(let message):
+                    completionHandler(.failure(.APIError(message: message ?? "API error")))
+                    return
+                default:
+                    print(error)
+                    completionHandler(.failure(.APIError(message: "Something went wrong")))
+                    return
+                }
             }
         }
     }
