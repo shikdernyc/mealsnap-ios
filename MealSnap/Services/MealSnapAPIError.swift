@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+enum MealSnapAPIError : Error {
+    case URLError
+    case RequestBodyEncodingError
+    case URLSessionError
+    case FailToParseResponse
+    case AuthorizationTokenError
+    case ResponseError(message: String?)
+}
