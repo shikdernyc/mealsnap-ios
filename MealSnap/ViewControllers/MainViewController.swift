@@ -15,9 +15,8 @@ class MainViewController: UIViewController, AuthStateChangeHandler {
             case .success:
                 print("Connected to MealSnap API")
                 return
-            case .failure(let error):
+            case .failure:
                 print("Unable to connect to MealSnap API")
-                print(error)
                 return
             }
         }
