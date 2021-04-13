@@ -7,6 +7,7 @@
 
 import Foundation
 import Amplify
+import AWSPluginsCore
 
 struct AuthUserDetail {
     let userId: String
@@ -102,5 +103,25 @@ extension AuthManager {
     
     static func removeAuthStateChangeHandler(handler: AuthStateChangeHandler){
         AuthManager.authChangeObservers.removeValue(forKey: ObjectIdentifier(handler))
+    }
+}
+
+extension AuthManager {
+    static func RetrieveJWTToken(completionHandler: @escaping (Result<String, Error>) -> Void) -> Void {
+        Amplify.Auth.fetchAuthSession { result in
+            do {
+                let session = try result.get()
+
+                // Get cognito user pool token
+                if let cognitoTokenProvider = session as? AuthCognitoTokensProvider {
+                    let tokens = try cognitoTokenProvider.getCognitoTokens().get()
+                    completionHandler(.success(tokens.idToken))
+                }
+
+            } catch let error {
+                completionHandler(.failure(error))
+                print("Fetch auth session failed with error - \(error)")
+            }
+        }
     }
 }
