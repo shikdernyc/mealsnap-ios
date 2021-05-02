@@ -28,11 +28,16 @@ class GalleryImageTableViewCell: UITableViewCell {
         return UINib(nibName: ID, bundle: nil)
     }
     
+    private func setGalleryImage(to image: UIImage) {
+        self.galleryImageView.image = image
+        self.galleryImageView.contentMode = .scaleAspectFill
+    }
+    
     public func configure(with image: GalleryImage) {
         titleLabel.text = image.title
         likeCountLabel.text = String(image.likeCount)
         if let cachedImage = GalleryImageTableViewCell.cache.object(forKey: image.imageUrl as NSString) {
-            self.galleryImageView.image = cachedImage
+            self.setGalleryImage(to: cachedImage)
             return
         }
         
@@ -46,8 +51,7 @@ class GalleryImageTableViewCell: UITableViewCell {
             DispatchQueue.main.async {
                 let uiImage = UIImage(data: data!)
                 GalleryImageTableViewCell.cache.setObject(uiImage!, forKey: image.imageUrl as NSString)
-                self.galleryImageView.image = uiImage
-                self.galleryImageView.contentMode = .scaleAspectFill
+                self.setGalleryImage(to: uiImage!)
             }
         }.resume()
     }
