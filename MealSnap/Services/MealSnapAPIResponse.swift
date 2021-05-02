@@ -63,7 +63,8 @@ struct MealSnapAPIResponse {
             }
             self.cachedJSON = try JSONDecoder().decode(T.self, from: data!)
             return self.cachedJSON as! T
-        }catch {
+        }catch let e {
+            print(e)
             throw MealSnapAPIResponseError.UnableToParseData
         }
     }

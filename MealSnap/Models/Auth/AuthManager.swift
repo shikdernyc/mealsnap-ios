@@ -20,6 +20,10 @@ enum RestoreUserError : Error {
     case NotLoggedIn
 }
 
+enum  AuthManagerError : Error {
+    case UnAuthenticated
+}
+
 typealias RestoreUserCompletion = (Result<Bool, Error>) -> Void
 
 struct AuthManager {
@@ -34,6 +38,14 @@ struct AuthManager {
                 completion(.failure(error))
             }
         }
+    }
+    
+    static func CurrentUser() throws -> AuthUserDetail{
+        let user = Amplify.Auth.getCurrentUser()
+        guard user != nil else {
+            throw AuthManagerError.UnAuthenticated
+        }
+        return AuthUserDetail(userId: user!.userId, userName: user!.username)
     }
     
     static func restoreSavedUser(completion: @escaping(RestoreUserCompletion)) {
@@ -84,7 +96,7 @@ struct AuthManager {
     }
 }
 
-protocol AuthStateChangeHandler : class {
+protocol AuthStateChangeHandler : AnyObject {
     func onAuthStateChange(isAuthenticated: Bool) -> Void
 }
 
