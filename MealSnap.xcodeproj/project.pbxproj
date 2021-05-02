@@ -13,8 +13,11 @@
 		5A13366726093166008CC957 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13366626093166008CC957 /* SignupViewController.swift */; };
 		5A13366D26093768008CC957 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13366C26093768008CC957 /* Alert.swift */; };
 		5A1336752609418D008CC957 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1336742609418D008CC957 /* GalleryViewController.swift */; };
+		5A1FC4AB2639E8FC00863359 /* GalleryImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FC4A92639E8FC00863359 /* GalleryImageTableViewCell.swift */; };
+		5A1FC4AC2639E8FC00863359 /* GalleryImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FC4AA2639E8FC00863359 /* GalleryImageTableViewCell.xib */; };
 		5A22A58A261F91EA0030286C /* MealSnapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22A589261F91EA0030286C /* MealSnapAPI.swift */; };
 		5A22A595261F92740030286C /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22A594261F92740030286C /* Services.swift */; };
+		5A2B763326390E5400377272 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2B763226390E5400377272 /* Gallery.swift */; };
 		5A2E9D6D2609B147003D37C2 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2E9D6C2609B147003D37C2 /* ExploreViewController.swift */; };
 		5A40EB2226080CD7002493FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40EB2126080CD7002493FA /* AppDelegate.swift */; };
 		5A40EB2426080CD7002493FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40EB2326080CD7002493FA /* SceneDelegate.swift */; };
@@ -27,6 +30,9 @@
 		5A54A82C260B055C00DD4A42 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A54A82A260B055C00DD4A42 /* awsconfiguration.json */; };
 		5A54A82D260B055C00DD4A42 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A54A82B260B055C00DD4A42 /* amplifyconfiguration.json */; };
 		5A55FF1C260AE61A00438984 /* StoryboardId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A55FF1B260AE61A00438984 /* StoryboardId.swift */; };
+		5A5F2CD22637F1BD002087A5 /* UserGalleryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F2CD12637F1BD002087A5 /* UserGalleryError.swift */; };
+		5A5F2CD72637F1FF002087A5 /* UserGalleryAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F2CD62637F1FF002087A5 /* UserGalleryAPIResponse.swift */; };
+		5A5F2CE22637F555002087A5 /* MealSnapAPIPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F2CE12637F555002087A5 /* MealSnapAPIPageResponse.swift */; };
 		5A734FB32609B8180008B576 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A734FB22609B8180008B576 /* SettingsViewController.swift */; };
 		5A734FBE2609BA520008B576 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A734FBD2609BA520008B576 /* AuthManager.swift */; };
 		5A9475F2260BEF7F00C22186 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9475F1260BEF7F00C22186 /* MainViewController.swift */; };
@@ -63,8 +69,11 @@
 		5A13366626093166008CC957 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		5A13366C26093768008CC957 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		5A1336742609418D008CC957 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		5A1FC4A92639E8FC00863359 /* GalleryImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageTableViewCell.swift; sourceTree = "<group>"; };
+		5A1FC4AA2639E8FC00863359 /* GalleryImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryImageTableViewCell.xib; sourceTree = "<group>"; };
 		5A22A589261F91EA0030286C /* MealSnapAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSnapAPI.swift; sourceTree = "<group>"; };
 		5A22A594261F92740030286C /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		5A2B763226390E5400377272 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		5A2E9D6C2609B147003D37C2 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		5A40EB1E26080CD7002493FA /* MealSnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A40EB2126080CD7002493FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +92,9 @@
 		5A54A82A260B055C00DD4A42 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		5A54A82B260B055C00DD4A42 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		5A55FF1B260AE61A00438984 /* StoryboardId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardId.swift; sourceTree = "<group>"; };
+		5A5F2CD12637F1BD002087A5 /* UserGalleryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGalleryError.swift; sourceTree = "<group>"; };
+		5A5F2CD62637F1FF002087A5 /* UserGalleryAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGalleryAPIResponse.swift; sourceTree = "<group>"; };
+		5A5F2CE12637F555002087A5 /* MealSnapAPIPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSnapAPIPageResponse.swift; sourceTree = "<group>"; };
 		5A734FB22609B8180008B576 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5A734FBD2609BA520008B576 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		5A9475F1260BEF7F00C22186 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				5A13366C26093768008CC957 /* Alert.swift */,
+				5A1FC4A92639E8FC00863359 /* GalleryImageTableViewCell.swift */,
+				5A1FC4AA2639E8FC00863359 /* GalleryImageTableViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -149,6 +163,7 @@
 		5A22A587261F91A10030286C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5A5F2CDE2637F53C002087A5 /* Common */,
 				5A22A589261F91EA0030286C /* MealSnapAPI.swift */,
 				5AA228FB2622C9EA000022D5 /* MealSnapAPIError.swift */,
 				5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */,
@@ -221,8 +236,17 @@
 			children = (
 				5A55FF1B260AE61A00438984 /* StoryboardId.swift */,
 				5A22A594261F92740030286C /* Services.swift */,
+				5A2B763226390E5400377272 /* Gallery.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		5A5F2CDE2637F53C002087A5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5A5F2CE12637F555002087A5 /* MealSnapAPIPageResponse.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		5A734FBA2609BA160008B576 /* Models */ = {
@@ -261,6 +285,8 @@
 			isa = PBXGroup;
 			children = (
 				5AFC2940261ECEE40058D20C /* UserGallery.swift */,
+				5A5F2CD12637F1BD002087A5 /* UserGalleryError.swift */,
+				5A5F2CD62637F1FF002087A5 /* UserGalleryAPIResponse.swift */,
 			);
 			path = UserGallery;
 			sourceTree = "<group>";
@@ -387,6 +413,7 @@
 				5A40EB2E26080CD8002493FA /* LaunchScreen.storyboard in Resources */,
 				5A54A82D260B055C00DD4A42 /* amplifyconfiguration.json in Resources */,
 				5A40EB2B26080CD8002493FA /* Assets.xcassets in Resources */,
+				5A1FC4AC2639E8FC00863359 /* GalleryImageTableViewCell.xib in Resources */,
 				5A40EB2926080CD7002493FA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,17 +548,22 @@
 				5A1336752609418D008CC957 /* GalleryViewController.swift in Sources */,
 				5A55FF1C260AE61A00438984 /* StoryboardId.swift in Sources */,
 				5A9475F2260BEF7F00C22186 /* MainViewController.swift in Sources */,
+				5A2B763326390E5400377272 /* Gallery.swift in Sources */,
 				5A22A595261F92740030286C /* Services.swift in Sources */,
+				5A1FC4AB2639E8FC00863359 /* GalleryImageTableViewCell.swift in Sources */,
 				5A22A58A261F91EA0030286C /* MealSnapAPI.swift in Sources */,
 				5AA229012622CA37000022D5 /* MealSnapAPIResponse.swift in Sources */,
 				5AFC2941261ECEE40058D20C /* UserGallery.swift in Sources */,
+				5A5F2CD22637F1BD002087A5 /* UserGalleryError.swift in Sources */,
 				5A13365F26092710008CC957 /* LoginViewController.swift in Sources */,
 				5A40EB2626080CD7002493FA /* Onboarding.swift in Sources */,
 				5A2E9D6D2609B147003D37C2 /* ExploreViewController.swift in Sources */,
+				5A5F2CD72637F1FF002087A5 /* UserGalleryAPIResponse.swift in Sources */,
 				5A13366726093166008CC957 /* SignupViewController.swift in Sources */,
 				5A40EB2226080CD7002493FA /* AppDelegate.swift in Sources */,
 				5A40EB2426080CD7002493FA /* SceneDelegate.swift in Sources */,
 				5A734FB32609B8180008B576 /* SettingsViewController.swift in Sources */,
+				5A5F2CE22637F555002087A5 /* MealSnapAPIPageResponse.swift in Sources */,
 				5A734FBE2609BA520008B576 /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
