@@ -9,11 +9,6 @@ import Foundation
 import Amplify
 import AWSPluginsCore
 
-struct AuthUserDetail {
-    let userId: String
-    let userName: String
-}
-
 typealias AuthOperationListender = (Result<Bool, AuthError>) -> Void
 
 enum RestoreUserError : Error {
@@ -40,12 +35,12 @@ struct AuthManager {
         }
     }
     
-    static func CurrentUser() throws -> AuthUserDetail{
+    static func CurrentUser() throws -> UserSummary{
         let user = Amplify.Auth.getCurrentUser()
         guard user != nil else {
             throw AuthManagerError.UnAuthenticated
         }
-        return AuthUserDetail(userId: user!.userId, userName: user!.username)
+        return UserSummary(userId: user!.userId, userName: user!.username)
     }
     
     static func restoreSavedUser(completion: @escaping(RestoreUserCompletion)) {
