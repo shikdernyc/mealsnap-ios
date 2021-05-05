@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		02A90D76CE92C48FA623FED6 /* Pods_MealSnap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2BA2A905B0C5174B54FF1D /* Pods_MealSnap.framework */; };
 		290F5498ABB0D8A156FED854 /* Pods_MealSnap_MealSnapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C9904A90FFEF342B44530C /* Pods_MealSnap_MealSnapUITests.framework */; };
+		5A04A1F12641F11E003FECB1 /* SearchUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04A1EF2641F11E003FECB1 /* SearchUserTableViewCell.swift */; };
+		5A04A1F22641F11E003FECB1 /* SearchUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A04A1F02641F11E003FECB1 /* SearchUserTableViewCell.xib */; };
 		5A13365F26092710008CC957 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13365E26092710008CC957 /* LoginViewController.swift */; };
 		5A13366726093166008CC957 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13366626093166008CC957 /* SignupViewController.swift */; };
-		5A13366D26093768008CC957 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13366C26093768008CC957 /* Alert.swift */; };
 		5A1336752609418D008CC957 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1336742609418D008CC957 /* GalleryViewController.swift */; };
 		5A1FC4AB2639E8FC00863359 /* GalleryImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1FC4A92639E8FC00863359 /* GalleryImageTableViewCell.swift */; };
 		5A1FC4AC2639E8FC00863359 /* GalleryImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FC4AA2639E8FC00863359 /* GalleryImageTableViewCell.xib */; };
@@ -38,6 +39,8 @@
 		5A9475F2260BEF7F00C22186 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9475F1260BEF7F00C22186 /* MainViewController.swift */; };
 		5AA228FC2622C9EA000022D5 /* MealSnapAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA228FB2622C9EA000022D5 /* MealSnapAPIError.swift */; };
 		5AA229012622CA37000022D5 /* MealSnapAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */; };
+		5ACE48542642293F00975000 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE48532642293F00975000 /* Alert.swift */; };
+		5AED5B11264091B600EA6565 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AED5B10264091B600EA6565 /* User.swift */; };
 		5AFC2938261EB1C60058D20C /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC2937261EB1C60058D20C /* CreatePostViewController.swift */; };
 		5AFC2941261ECEE40058D20C /* UserGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC2940261ECEE40058D20C /* UserGallery.swift */; };
 		A915414E3B5B052531C143BE /* Pods_MealSnapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1753A9BA492E237D404BEDB9 /* Pods_MealSnapTests.framework */; };
@@ -65,9 +68,10 @@
 		03DF2D438C8C0292E4547200 /* Pods-MealSnapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealSnapTests.release.xcconfig"; path = "Target Support Files/Pods-MealSnapTests/Pods-MealSnapTests.release.xcconfig"; sourceTree = "<group>"; };
 		12669E5D750E85766380725E /* Pods-MealSnap-MealSnapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealSnap-MealSnapUITests.release.xcconfig"; path = "Target Support Files/Pods-MealSnap-MealSnapUITests/Pods-MealSnap-MealSnapUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1753A9BA492E237D404BEDB9 /* Pods_MealSnapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealSnapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A04A1EF2641F11E003FECB1 /* SearchUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserTableViewCell.swift; sourceTree = "<group>"; };
+		5A04A1F02641F11E003FECB1 /* SearchUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchUserTableViewCell.xib; sourceTree = "<group>"; };
 		5A13365E26092710008CC957 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5A13366626093166008CC957 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		5A13366C26093768008CC957 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		5A1336742609418D008CC957 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		5A1FC4A92639E8FC00863359 /* GalleryImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageTableViewCell.swift; sourceTree = "<group>"; };
 		5A1FC4AA2639E8FC00863359 /* GalleryImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryImageTableViewCell.xib; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 		5A9475F1260BEF7F00C22186 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5AA228FB2622C9EA000022D5 /* MealSnapAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSnapAPIError.swift; sourceTree = "<group>"; };
 		5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSnapAPIResponse.swift; sourceTree = "<group>"; };
+		5ACE48532642293F00975000 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		5AED5B10264091B600EA6565 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5AFC2937261EB1C60058D20C /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		5AFC2940261ECEE40058D20C /* UserGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGallery.swift; sourceTree = "<group>"; };
 		730F89369E65AC50691BA03D /* Pods-MealSnap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealSnap.debug.xcconfig"; path = "Target Support Files/Pods-MealSnap/Pods-MealSnap.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,9 +159,11 @@
 		5A13366B26093746008CC957 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5A13366C26093768008CC957 /* Alert.swift */,
 				5A1FC4A92639E8FC00863359 /* GalleryImageTableViewCell.swift */,
 				5A1FC4AA2639E8FC00863359 /* GalleryImageTableViewCell.xib */,
+				5A04A1EF2641F11E003FECB1 /* SearchUserTableViewCell.swift */,
+				5A04A1F02641F11E003FECB1 /* SearchUserTableViewCell.xib */,
+				5ACE48532642293F00975000 /* Alert.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -252,6 +260,7 @@
 		5A734FBA2609BA160008B576 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5AED5B0F264091A800EA6565 /* User */,
 				5AFC293F261ECEB40058D20C /* UserGallery */,
 				5A734FBB2609BA1C0008B576 /* Auth */,
 			);
@@ -279,6 +288,14 @@
 				5AFC2937261EB1C60058D20C /* CreatePostViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5AED5B0F264091A800EA6565 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				5AED5B10264091B600EA6565 /* User.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		5AFC293F261ECEB40058D20C /* UserGallery */ = {
@@ -412,6 +429,7 @@
 				5A54A82C260B055C00DD4A42 /* awsconfiguration.json in Resources */,
 				5A40EB2E26080CD8002493FA /* LaunchScreen.storyboard in Resources */,
 				5A54A82D260B055C00DD4A42 /* amplifyconfiguration.json in Resources */,
+				5A04A1F22641F11E003FECB1 /* SearchUserTableViewCell.xib in Resources */,
 				5A40EB2B26080CD8002493FA /* Assets.xcassets in Resources */,
 				5A1FC4AC2639E8FC00863359 /* GalleryImageTableViewCell.xib in Resources */,
 				5A40EB2926080CD7002493FA /* Main.storyboard in Resources */,
@@ -542,15 +560,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A13366D26093768008CC957 /* Alert.swift in Sources */,
 				5AA228FC2622C9EA000022D5 /* MealSnapAPIError.swift in Sources */,
 				5AFC2938261EB1C60058D20C /* CreatePostViewController.swift in Sources */,
 				5A1336752609418D008CC957 /* GalleryViewController.swift in Sources */,
+				5ACE48542642293F00975000 /* Alert.swift in Sources */,
 				5A55FF1C260AE61A00438984 /* StoryboardId.swift in Sources */,
 				5A9475F2260BEF7F00C22186 /* MainViewController.swift in Sources */,
 				5A2B763326390E5400377272 /* Gallery.swift in Sources */,
 				5A22A595261F92740030286C /* Services.swift in Sources */,
 				5A1FC4AB2639E8FC00863359 /* GalleryImageTableViewCell.swift in Sources */,
+				5A04A1F12641F11E003FECB1 /* SearchUserTableViewCell.swift in Sources */,
 				5A22A58A261F91EA0030286C /* MealSnapAPI.swift in Sources */,
 				5AA229012622CA37000022D5 /* MealSnapAPIResponse.swift in Sources */,
 				5AFC2941261ECEE40058D20C /* UserGallery.swift in Sources */,
@@ -563,6 +582,7 @@
 				5A40EB2226080CD7002493FA /* AppDelegate.swift in Sources */,
 				5A40EB2426080CD7002493FA /* SceneDelegate.swift in Sources */,
 				5A734FB32609B8180008B576 /* SettingsViewController.swift in Sources */,
+				5AED5B11264091B600EA6565 /* User.swift in Sources */,
 				5A5F2CE22637F555002087A5 /* MealSnapAPIPageResponse.swift in Sources */,
 				5A734FBE2609BA520008B576 /* AuthManager.swift in Sources */,
 			);
