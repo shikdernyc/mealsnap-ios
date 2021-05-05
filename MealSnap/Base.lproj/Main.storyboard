@@ -294,35 +294,34 @@
             </objects>
             <point key="canvasLocation" x="3790" y="246"/>
         </scene>
-        <!--View Controller-->
+        <!--Explore View Controller-->
         <scene sceneID="OvH-bz-vdM">
             <objects>
-                <viewController storyboardIdentifier="explore_vc" id="pKp-gP-83S" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="explore_vc" id="pKp-gP-83S" customClass="ExploreViewController" customModule="MealSnap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ply-iK-1t4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2iA-5e-rbo">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2iA-5e-rbo">
                                 <rect key="frame" x="20" y="108" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SC5-mW-MsE">
-                                <rect key="frame" x="148" y="162" width="118" height="30"/>
-                                <state key="normal" title="View User Profile"/>
-                                <connections>
-                                    <segue destination="Wj1-XC-sQA" kind="show" id="C5f-68-UYk"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yrv-JY-pZ1">
+                                <rect key="frame" x="20" y="154" width="374" height="647"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sNE-rA-dpp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SC5-mW-MsE" firstAttribute="centerX" secondItem="ply-iK-1t4" secondAttribute="centerX" id="CVh-AO-Ofp"/>
                             <constraint firstItem="sNE-rA-dpp" firstAttribute="trailing" secondItem="2iA-5e-rbo" secondAttribute="trailing" constant="20" id="D0i-SQ-Rdm"/>
                             <constraint firstItem="2iA-5e-rbo" firstAttribute="leading" secondItem="sNE-rA-dpp" secondAttribute="leading" constant="20" id="EfO-Qw-g7U"/>
+                            <constraint firstItem="sNE-rA-dpp" firstAttribute="trailing" secondItem="yrv-JY-pZ1" secondAttribute="trailing" constant="20" id="Ewr-Q8-ztO"/>
+                            <constraint firstItem="yrv-JY-pZ1" firstAttribute="top" secondItem="2iA-5e-rbo" secondAttribute="bottom" constant="12" id="NOF-RS-OFG"/>
                             <constraint firstItem="2iA-5e-rbo" firstAttribute="top" secondItem="sNE-rA-dpp" secondAttribute="top" constant="20" id="pfs-SI-SkU"/>
-                            <constraint firstItem="SC5-mW-MsE" firstAttribute="top" secondItem="2iA-5e-rbo" secondAttribute="bottom" constant="20" id="von-uh-IEZ"/>
+                            <constraint firstItem="sNE-rA-dpp" firstAttribute="bottom" secondItem="yrv-JY-pZ1" secondAttribute="bottom" constant="12" id="rTf-Yo-Qmd"/>
+                            <constraint firstItem="yrv-JY-pZ1" firstAttribute="leading" secondItem="sNE-rA-dpp" secondAttribute="leading" constant="20" id="ywX-wh-uDS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6Ej-BZ-61C">
@@ -339,6 +338,10 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchUserTable" destination="yrv-JY-pZ1" id="9xj-9O-1O3"/>
+                        <outlet property="usernameInput" destination="2iA-5e-rbo" id="mfd-IK-3b1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a3S-9w-UhI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -613,8 +616,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="NCG-yU-5sx"/>
-        <segue reference="Q1X-ez-PSq"/>
-        <segue reference="E3P-CM-FYC"/>
+        <segue reference="4i3-sX-Ygu"/>
+        <segue reference="WHa-BU-GqE"/>
         <segue reference="qSC-YU-YPW"/>
     </inferredMetricsTieBreakers>
     <resources>
