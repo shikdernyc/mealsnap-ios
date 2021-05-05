@@ -32,9 +32,18 @@ class ExploreViewController: UIViewController {
 
 extension ExploreViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(searchedUsers[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
-        // TODO: Send to user gallery
+        guard let user = searchedUsers[indexPath.row] as UserSummary? else {
+            return
+        }
+        DispatchQueue.main.async {
+            guard let galleryVC = self.storyboard?.instantiateViewController(identifier: StoryboardId.GalleryViewController.rawValue) as? GalleryViewController else {
+                AlertComponent.showError(on: self, message: "Unable to navigate to user's page")
+                return
+            }
+            galleryVC.configure(for: user.userId, username: user.userName)
+            self.navigationController?.pushViewController(galleryVC, animated: true)
+        }
     }
 }
 
@@ -55,7 +64,7 @@ extension ExploreViewController : UITextFieldDelegate {
         guard let username = textField.text else {
             return true
         }
-        print(username)
+        // TODO: Show Loading while fetching
         User.FindUser(username: username) {result in
             switch(result){
             case .success(let user):

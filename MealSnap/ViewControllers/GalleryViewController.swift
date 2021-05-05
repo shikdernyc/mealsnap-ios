@@ -15,32 +15,50 @@ class GalleryViewController: UIViewController {
     
     private var userId: String = ""
     
+    private var requestedTitle = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if userId.count == 0 {
-            do {
-                let user = try AuthManager.CurrentUser()
-                self.userId = user.userId
-                print(user)
-            } catch let error {
-                print(error)
-            }
-        }
+        print("Loaded")
         galleryTableView.register(GalleryImageTableViewCell.nib(), forCellReuseIdentifier: GalleryImageTableViewCell.ID)
         galleryTableView.delegate = self
         galleryTableView.dataSource = self
         galleryTableView.refreshControl = UIRefreshControl()
         galleryTableView.refreshControl?.addTarget(self, action: #selector(loadInitialData), for: .valueChanged)
+        if userId.count == 0 {
+            do {
+                let user = try AuthManager.CurrentUser()
+                self.configure(for: user.userId)
+            } catch let error {
+                print(error)
+            }
+        }
         self.loadInitialData()
     }
     
-    func reloadGalleryData() {
+    override func viewDidAppear(_ animated: Bool) {
+        if (requestedTitle.count != 0) {
+            self.navigationController?.navigationBar.topItem?.title = requestedTitle
+            requestedTitle = ""
+        }
+    }
+    
+    public func configure(for userId: String, username:String? = nil) {
+        print("Configuring for " + userId)
+        if username != nil{
+            // TODO: This is confusing. Centralize starting this activity using configure from both other pages as well as view controller
+            self.requestedTitle = username!
+        }
+        self.userId = userId
+    }
+    
+    private func reloadGalleryData() {
         DispatchQueue.main.async {
             self.galleryTableView.reloadData()
         }
     }
-
-    @objc func loadInitialData() -> Void {
+    
+    @objc private func loadInitialData() -> Void {
         DispatchQueue.main.async {
             self.galleryTableView.refreshControl?.beginRefreshing()
         }
@@ -58,7 +76,7 @@ class GalleryViewController: UIViewController {
         }
     }
     
-    func loadMoreData() {
+    private func loadMoreData() {
         if self.userGallery?.canFetchMore() == true {
             print("Loading More data")
             self.userGallery?.loadMore() { result in
@@ -99,17 +117,17 @@ extension GalleryViewController {
         }
         let position = scrollView.contentOffset.y
         if position > (galleryTableView.contentSize.height - 600 - scrollView.frame.size.height){
-                print("Loading More")
-                userGallery?.loadMore() { result in
-                    switch(result){
-                    case .success:
-                        self.reloadGalleryData()
-                        return
-                    case .failure(let error):
-                        print("Failed to load more")
-                        print(error)
-                    }
+            print("Loading More")
+            userGallery?.loadMore() { result in
+                switch(result){
+                case .success:
+                    self.reloadGalleryData()
+                    return
+                case .failure(let error):
+                    print("Failed to load more")
+                    print(error)
                 }
+            }
         }
     }
 }
