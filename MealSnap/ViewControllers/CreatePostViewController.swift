@@ -23,7 +23,6 @@ class CreatePostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        descriptionTextView
         styleInput(view: descriptionTextView)
         styleInput(view: titleInput)
         descriptionTextView.layer.borderColor = UIColor.gray.cgColor

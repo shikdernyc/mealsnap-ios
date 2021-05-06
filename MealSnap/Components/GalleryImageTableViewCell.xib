@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,46 +26,54 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bha-RM-Fp9">
-                        <rect key="frame" x="8" y="483" width="304" height="22"/>
+                        <rect key="frame" x="8" y="467" width="304" height="32"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpM-j0-h16">
-                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="9vZ-id-dFr"/>
-                                    <constraint firstAttribute="width" constant="22" id="QTs-ju-m1x"/>
+                                    <constraint firstAttribute="height" constant="32" id="VLI-dy-5Wc"/>
+                                    <constraint firstAttribute="width" constant="32" id="Wki-uM-pZp"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="heart" catalog="system"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="heart-unfilled" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTapLike:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6DN-4N-4l9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1la-c0-QhU">
-                                <rect key="frame" x="282" y="0.0" width="22" height="22"/>
+                                <rect key="frame" x="272" y="0.0" width="32" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="22" id="CF2-Pa-Utg"/>
-                                    <constraint firstAttribute="height" constant="22" id="giA-3e-vur"/>
+                                    <constraint firstAttribute="height" constant="32" id="PhB-nc-xPI"/>
+                                    <constraint firstAttribute="width" constant="32" id="jVs-oi-xgg"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="message" catalog="system"/>
+                                <state key="normal" title="Button">
+                                    <imageReference key="image" image="comment" symbolScale="large"/>
+                                </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="likeCount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jv3-Bk-dPU">
-                                <rect key="frame" x="26" y="0.0" width="53.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Like Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9C-PO-IKC">
+                                <rect key="frame" x="40" y="6" width="82" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dpM-j0-h16" firstAttribute="leading" secondItem="bha-RM-Fp9" secondAttribute="leading" id="05t-Wa-g8A"/>
-                            <constraint firstItem="1la-c0-QhU" firstAttribute="top" secondItem="bha-RM-Fp9" secondAttribute="top" id="0VU-Ys-3YU"/>
-                            <constraint firstAttribute="bottom" secondItem="dpM-j0-h16" secondAttribute="bottom" id="8c8-oS-npD"/>
-                            <constraint firstItem="Jv3-Bk-dPU" firstAttribute="top" secondItem="bha-RM-Fp9" secondAttribute="top" id="BAt-eH-96u"/>
-                            <constraint firstAttribute="bottom" secondItem="Jv3-Bk-dPU" secondAttribute="bottom" constant="1" id="UNo-QT-q2d"/>
-                            <constraint firstItem="dpM-j0-h16" firstAttribute="top" secondItem="bha-RM-Fp9" secondAttribute="top" id="WIw-j6-1FJ"/>
-                            <constraint firstAttribute="bottom" secondItem="1la-c0-QhU" secondAttribute="bottom" id="YS1-vQ-c6y"/>
-                            <constraint firstAttribute="trailing" secondItem="1la-c0-QhU" secondAttribute="trailing" id="fSU-w0-6So"/>
-                            <constraint firstItem="Jv3-Bk-dPU" firstAttribute="leading" secondItem="dpM-j0-h16" secondAttribute="trailing" constant="4" id="qgv-S9-fut"/>
+                            <constraint firstAttribute="trailing" secondItem="1la-c0-QhU" secondAttribute="trailing" id="7df-Wr-qJv"/>
+                            <constraint firstAttribute="bottom" secondItem="dpM-j0-h16" secondAttribute="bottom" id="BQD-nz-cL5"/>
+                            <constraint firstItem="1la-c0-QhU" firstAttribute="top" secondItem="bha-RM-Fp9" secondAttribute="top" id="JdK-0q-LVo"/>
+                            <constraint firstItem="dpM-j0-h16" firstAttribute="leading" secondItem="bha-RM-Fp9" secondAttribute="leading" id="P8n-VE-z6u"/>
+                            <constraint firstAttribute="bottom" secondItem="1la-c0-QhU" secondAttribute="bottom" id="XHs-vG-AXc"/>
+                            <constraint firstItem="dpM-j0-h16" firstAttribute="top" secondItem="bha-RM-Fp9" secondAttribute="top" id="r9c-NR-jXe"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="872-cd-xYp">
-                        <rect key="frame" x="8" y="400" width="304" height="59"/>
+                        <rect key="frame" x="8" y="400" width="304" height="43"/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -73,7 +82,7 @@
                 <constraints>
                     <constraint firstItem="oZn-xF-YZI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="2Yf-J2-fvO"/>
                     <constraint firstItem="872-cd-xYp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="6Nk-oM-Fah"/>
-                    <constraint firstAttribute="bottom" secondItem="bha-RM-Fp9" secondAttribute="bottom" constant="12" id="DyH-3p-t4S"/>
+                    <constraint firstAttribute="bottom" secondItem="bha-RM-Fp9" secondAttribute="bottom" constant="18" id="DyH-3p-t4S"/>
                     <constraint firstItem="oZn-xF-YZI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="J4H-br-DDk"/>
                     <constraint firstAttribute="trailing" secondItem="bha-RM-Fp9" secondAttribute="trailing" constant="8" id="NIy-gL-Sr4"/>
                     <constraint firstItem="872-cd-xYp" firstAttribute="top" secondItem="oZn-xF-YZI" secondAttribute="bottom" id="adv-n7-rN3"/>
@@ -86,14 +95,15 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="galleryImageView" destination="oZn-xF-YZI" id="gqG-pE-aBY"/>
-                <outlet property="likeCountLabel" destination="Jv3-Bk-dPU" id="waB-az-Vx3"/>
+                <outlet property="likeButton" destination="dpM-j0-h16" id="0dU-zg-ifJ"/>
+                <outlet property="likeCountLabel" destination="c9C-PO-IKC" id="MeX-8w-fV1"/>
                 <outlet property="titleLabel" destination="872-cd-xYp" id="c8R-D2-YDs"/>
             </connections>
             <point key="canvasLocation" x="82.608695652173921" y="58.59375"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="heart" catalog="system" width="128" height="109"/>
-        <image name="message" catalog="system" width="128" height="113"/>
+        <image name="comment" width="256" height="256"/>
+        <image name="heart-unfilled" width="256" height="228.5"/>
     </resources>
 </document>
