@@ -18,6 +18,7 @@
 		5A1FC4AC2639E8FC00863359 /* GalleryImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A1FC4AA2639E8FC00863359 /* GalleryImageTableViewCell.xib */; };
 		5A22A58A261F91EA0030286C /* MealSnapAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22A589261F91EA0030286C /* MealSnapAPI.swift */; };
 		5A22A595261F92740030286C /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22A594261F92740030286C /* Services.swift */; };
+		5A27CDCD2643BDB00057F7A9 /* GalleryImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A27CDCC2643BDB00057F7A9 /* GalleryImage.swift */; };
 		5A2B763326390E5400377272 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2B763226390E5400377272 /* Gallery.swift */; };
 		5A2E9D6D2609B147003D37C2 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2E9D6C2609B147003D37C2 /* ExploreViewController.swift */; };
 		5A40EB2226080CD7002493FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40EB2126080CD7002493FA /* AppDelegate.swift */; };
@@ -77,6 +78,7 @@
 		5A1FC4AA2639E8FC00863359 /* GalleryImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryImageTableViewCell.xib; sourceTree = "<group>"; };
 		5A22A589261F91EA0030286C /* MealSnapAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSnapAPI.swift; sourceTree = "<group>"; };
 		5A22A594261F92740030286C /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		5A27CDCC2643BDB00057F7A9 /* GalleryImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImage.swift; sourceTree = "<group>"; };
 		5A2B763226390E5400377272 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		5A2E9D6C2609B147003D37C2 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		5A40EB1E26080CD7002493FA /* MealSnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -304,6 +306,7 @@
 				5AFC2940261ECEE40058D20C /* UserGallery.swift */,
 				5A5F2CD12637F1BD002087A5 /* UserGalleryError.swift */,
 				5A5F2CD62637F1FF002087A5 /* UserGalleryAPIResponse.swift */,
+				5A27CDCC2643BDB00057F7A9 /* GalleryImage.swift */,
 			);
 			path = UserGallery;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				5A734FB32609B8180008B576 /* SettingsViewController.swift in Sources */,
 				5AED5B11264091B600EA6565 /* User.swift in Sources */,
 				5A5F2CE22637F555002087A5 /* MealSnapAPIPageResponse.swift in Sources */,
+				5A27CDCD2643BDB00057F7A9 /* GalleryImage.swift in Sources */,
 				5A734FBE2609BA520008B576 /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

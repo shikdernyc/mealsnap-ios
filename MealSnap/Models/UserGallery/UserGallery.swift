@@ -8,12 +8,16 @@
 import Foundation
 
 class UserGallery {
+    private var userId: String
     private var galleryImages: [GalleryImage]
     private var nextPage: String?
     private var paginating: Bool
     
-    private init(items: [GalleryImage], page: MealSnapAPIPageResponse? = nil) {
-        self.galleryImages = items
+    private init(items: [GalleryImageResponse], page: MealSnapAPIPageResponse? = nil, userId: String) {
+        self.galleryImages = items.map {
+            return GalleryImage.from(apiImage: $0, ownerId: userId)
+        }
+        self.userId = userId
         nextPage = page?.next
         self.paginating = false
     }
@@ -27,7 +31,6 @@ class UserGallery {
     }
     
     func loadMore(handler: @escaping ((Result<Bool, UserGalleryError>) -> Void)) {
-        // TODO: call next page
         guard let url = nextPage else {
             return
         }
@@ -35,7 +38,10 @@ class UserGallery {
         MealSnapAPI.GetRequest(route: url) { result in
             do {
                 let response = try UserGallery.ParseUserGalleryResponse(result: result)
-                self.galleryImages.append(contentsOf: response.result)
+                let newImages = response.result.map {
+                    return GalleryImage.from(apiImage: $0, ownerId: self.userId)
+                }
+                self.galleryImages.append(contentsOf: newImages)
                 self.nextPage = response.page?.next
                 handler(.success(true))
                 self.paginating = false
@@ -116,7 +122,7 @@ extension UserGallery {
         MealSnapAPI.GetRequest(route: url) { result in
             do {
                 let response = try ParseUserGalleryResponse(result: result)
-                let gallery = UserGallery(items: response.result, page: response.page)
+                let gallery = UserGallery(items: response.result, page: response.page, userId: userId)
                 handler(.success(gallery))
                 return
             }catch let error {

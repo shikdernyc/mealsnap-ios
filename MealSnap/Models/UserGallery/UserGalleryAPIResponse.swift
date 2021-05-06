@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GalleryImage: Decodable {
+struct GalleryImageResponse: Decodable {
     let id: String
     let title: String
     let description: String
@@ -17,6 +17,6 @@ struct GalleryImage: Decodable {
 }
 
 struct FetchGalleryImageForUserResponse: Decodable {
-    let result: [GalleryImage]
+    let result: [GalleryImageResponse]
     let page: MealSnapAPIPageResponse?
 }
