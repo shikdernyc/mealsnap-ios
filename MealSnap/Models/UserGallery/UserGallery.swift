@@ -75,8 +75,9 @@ extension UserGallery {
             switch(result){
             case .success(var response):
                 do{
-                    let galleryImage = try response.parseData() as GalleryImage
-                    completionHandler(.success(galleryImage))
+                    let userId = try AuthManager.CurrentUser().userId
+                    let galleryImage = try response.parseData() as GalleryImageResponse
+                    completionHandler(.success(GalleryImage.from(apiImage: galleryImage, ownerId: userId)))
                     return
                 }catch{
                     completionHandler(.failure(UserGalleryError.APIError(message: "Error Parsing JSON")))
