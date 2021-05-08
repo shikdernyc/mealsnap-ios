@@ -9,7 +9,6 @@ import UIKit
 
 class GalleryImageTableViewCell: UITableViewCell {
     static let ID = "GalleryImageTableViewCell"
-    private static let cache = NSCache<NSString, UIImage>()
     private var imageModel : GalleryImage? = nil
     @IBOutlet weak var galleryImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -65,23 +64,15 @@ class GalleryImageTableViewCell: UITableViewCell {
         titleLabel.text = image.title
         likeCountLabel.text = String(image.likeCount)
         self.updateLikeView()
-        if let cachedImage = GalleryImageTableViewCell.cache.object(forKey: image.imageUrl as NSString) {
-            self.setGalleryImage(to: cachedImage)
-            return
-        }
-        
-        let url = URL(string: image.imageUrl)
-        URLSession.shared.dataTask(with: url!) {data,response,error in
-            if error != nil {
-                print("Error Loading Photo")
-                print(error!)
+        ImageService.fetch(imageUrl: image.imageUrl){ result in
+            switch(result){
+                case .success(let image):
+                    self.setGalleryImage(to: image)
+                    return
+                case .failure(let error):
+                    print(error)
                 return
             }
-            DispatchQueue.main.async {
-                let uiImage = UIImage(data: data!)
-                GalleryImageTableViewCell.cache.setObject(uiImage!, forKey: image.imageUrl as NSString)
-                self.setGalleryImage(to: uiImage!)
-            }
-        }.resume()
+        }
     }
 }

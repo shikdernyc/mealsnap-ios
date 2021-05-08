@@ -8,7 +8,6 @@
 import UIKit
 
 class GalleryViewController: UIViewController {
-    public static let StoryboardId = "gallery_vc"
     @IBOutlet weak var galleryTableView: UITableView!
     
     private var userGallery: UserGallery?
@@ -95,6 +94,12 @@ class GalleryViewController: UIViewController {
 extension GalleryViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard let photoDetailVC = self.storyboard?.instantiateViewController(identifier: StoryboardId.PhotoDetailViewController.rawValue) as? PhotoDetailViewController else {
+            print("Unable to display photo details")
+            return
+        }
+        photoDetailVC.configure(with: self.userGallery!.items()[indexPath.row])
+        self.navigationController?.pushViewController(photoDetailVC, animated: true)
     }
 }
 
