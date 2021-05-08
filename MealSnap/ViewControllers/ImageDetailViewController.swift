@@ -8,11 +8,38 @@
 import UIKit
 
 class ImageDetailViewController: UIViewController {
-
+    
+    var imageModel: GalleryImage? = nil
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var descriptionLabel: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        guard imageModel != nil else {
+            AlertComponent.showError(on: self, message: "This view has not been properly configured")
+            self.navigationController?.popViewController(animated: true)
+            return
+        }
+        self.titleLabel.text = imageModel!.title
+        self.descriptionLabel.text = imageModel!.description
+        ImageService.fetch(imageUrl: self.imageModel!.imageUrl) {result in
+            switch(result) {
+            case .success(let image):
+                self.imageView.image = image
+                print("Fetched")
+                return
+            case .failure(let error):
+                AlertComponent.showError(on: self, message: "Unable to fetch image")
+                print(error)
+            }
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    func configure(with image: GalleryImage) {
+        self.imageModel = image
+//        self.descriptionLabel.text = image.description
     }
     
 
