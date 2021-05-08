@@ -8,7 +8,6 @@
 import UIKit
 
 class GalleryViewController: UIViewController {
-    public static let StoryboardId = "gallery_vc"
     @IBOutlet weak var galleryTableView: UITableView!
     
     private var userGallery: UserGallery?
@@ -95,6 +94,17 @@ class GalleryViewController: UIViewController {
 extension GalleryViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard let detailVc = self.storyboard?.instantiateViewController(identifier: StoryboardId.ImageDetailViewController.rawValue) as? ImageDetailViewController else {
+            AlertComponent.showError(on: self, message: "Unable to open image")
+            return
+        }
+        let imageModel = self.userGallery?.items()[indexPath.row]
+        guard imageModel != nil else{
+            AlertComponent.showError(on: self, message: "Unable to retrieve image data")
+            return
+        }
+        detailVc.configure(with: imageModel!)
+        self.navigationController?.pushViewController(detailVc, animated: true)
     }
 }
 

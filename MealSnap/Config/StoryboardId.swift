@@ -22,5 +22,5 @@ enum StoryboardId : String {
     case ExploreViewController = "explore_vc"
     case UserProfileViewController = "explore_user_vc"
     case SettingsViewController = "settings_vc"
-    case PostDetailViewController = "post_detail_vc"
+    case ImageDetailViewController = "post_detail_vc"
 }
