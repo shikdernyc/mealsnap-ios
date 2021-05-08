@@ -42,6 +42,7 @@
 		5AA229012622CA37000022D5 /* MealSnapAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */; };
 		5ACE48542642293F00975000 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE48532642293F00975000 /* Alert.swift */; };
 		5AD9639A26465A4000E22875 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9639926465A4000E22875 /* ImageDetailViewController.swift */; };
+		5AD9639C26465F4600E22875 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9639B26465F4600E22875 /* ImageService.swift */; };
 		5AED5B11264091B600EA6565 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AED5B10264091B600EA6565 /* User.swift */; };
 		5AFC2938261EB1C60058D20C /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC2937261EB1C60058D20C /* CreatePostViewController.swift */; };
 		5AFC2941261ECEE40058D20C /* UserGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC2940261ECEE40058D20C /* UserGallery.swift */; };
@@ -109,6 +110,7 @@
 		5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSnapAPIResponse.swift; sourceTree = "<group>"; };
 		5ACE48532642293F00975000 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		5AD9639926465A4000E22875 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		5AD9639B26465F4600E22875 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		5AED5B10264091B600EA6565 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5AFC2937261EB1C60058D20C /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		5AFC2940261ECEE40058D20C /* UserGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGallery.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				5A22A589261F91EA0030286C /* MealSnapAPI.swift */,
 				5AA228FB2622C9EA000022D5 /* MealSnapAPIError.swift */,
 				5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */,
+				5AD9639B26465F4600E22875 /* ImageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				5A22A58A261F91EA0030286C /* MealSnapAPI.swift in Sources */,
 				5AA229012622CA37000022D5 /* MealSnapAPIResponse.swift in Sources */,
 				5AFC2941261ECEE40058D20C /* UserGallery.swift in Sources */,
+				5AD9639C26465F4600E22875 /* ImageService.swift in Sources */,
 				5A5F2CD22637F1BD002087A5 /* UserGalleryError.swift in Sources */,
 				5A13365F26092710008CC957 /* LoginViewController.swift in Sources */,
 				5A40EB2626080CD7002493FA /* Onboarding.swift in Sources */,
