@@ -528,29 +528,10 @@
             </objects>
             <point key="canvasLocation" x="3790" y="-476"/>
         </scene>
-        <!--Username-->
-        <scene sceneID="qYx-OR-YX0">
-            <objects>
-                <viewController storyboardIdentifier="explore_user_vc" id="Wj1-XC-sQA" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pHs-5H-6Vj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="ctV-1W-u0I"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Username" id="ucP-u9-yC4"/>
-                    <connections>
-                        <segue destination="uOq-EC-uh6" kind="show" id="ozl-T6-EnQ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Tv-jZ-vMf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5984" y="246"/>
-        </scene>
         <!--Photo Title-->
         <scene sceneID="aNU-Od-PJq">
             <objects>
-                <viewController storyboardIdentifier="post_detail_vc" id="uOq-EC-uh6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="post_detail_vc" id="uOq-EC-uh6" customClass="ImageDetailViewController" customModule="MealSnap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LEi-xX-jt7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -615,7 +596,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NCG-yU-5sx"/>
         <segue reference="4i3-sX-Ygu"/>
         <segue reference="WHa-BU-GqE"/>
         <segue reference="qSC-YU-YPW"/>
