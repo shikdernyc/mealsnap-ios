@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GalleryViewController: UIViewController {
     @IBOutlet weak var galleryTableView: UITableView!
@@ -16,14 +17,21 @@ class GalleryViewController: UIViewController {
     
     private var requestedTitle = ""
     
+    private var refreshPlayer : AVAudioPlayer? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Loaded")
+        do {
+            self.refreshPlayer = try AudioService.Player(for: .Refresh)
+        }catch let error {
+            print(error)
+        }
         galleryTableView.register(GalleryImageTableViewCell.nib(), forCellReuseIdentifier: GalleryImageTableViewCell.ID)
         galleryTableView.delegate = self
         galleryTableView.dataSource = self
         galleryTableView.refreshControl = UIRefreshControl()
-        galleryTableView.refreshControl?.addTarget(self, action: #selector(loadInitialData), for: .valueChanged)
+        galleryTableView.refreshControl?.addTarget(self, action: #selector(handleRefreshData), for: .valueChanged)
         if userId.count == 0 {
             do {
                 let user = try AuthManager.CurrentUser()
@@ -57,20 +65,30 @@ class GalleryViewController: UIViewController {
         }
     }
     
-    @objc private func loadInitialData() -> Void {
+    @objc private func handleRefreshData() -> Void {
         DispatchQueue.main.async {
             self.galleryTableView.refreshControl?.beginRefreshing()
         }
+        self.loadInitialData() { _ in
+            DispatchQueue.main.async {
+                self.refreshPlayer?.play()
+                self.galleryTableView.refreshControl?.endRefreshing()
+            }
+            self.reloadGalleryData()
+        }
+    }
+    
+    private func loadInitialData(callback: ((Result<Bool, Error>) -> Void)? = nil) -> Void {
+
         UserGallery.GetGalleryForUser(userId: self.userId){result in
             switch(result){
             case .success(let gallery):
                 self.userGallery = gallery
                 self.reloadGalleryData()
+                callback?(.success(true))
             case .failure(let error):
+                callback?(.failure(error))
                 print(error)
-            }
-            DispatchQueue.main.async {
-                self.galleryTableView.refreshControl?.endRefreshing()
             }
         }
     }

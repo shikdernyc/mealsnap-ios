@@ -29,6 +29,8 @@
 		5A40EB2E26080CD8002493FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A40EB2C26080CD8002493FA /* LaunchScreen.storyboard */; };
 		5A40EB3926080CD8002493FA /* MealSnapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40EB3826080CD8002493FA /* MealSnapTests.swift */; };
 		5A40EB4426080CD8002493FA /* MealSnapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40EB4326080CD8002493FA /* MealSnapUITests.swift */; };
+		5A4423C52647515000A07C13 /* woosh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5A4423C42647515000A07C13 /* woosh.mp3 */; };
+		5A4423C72647516300A07C13 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4423C62647516300A07C13 /* AudioService.swift */; };
 		5A54A82C260B055C00DD4A42 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A54A82A260B055C00DD4A42 /* awsconfiguration.json */; };
 		5A54A82D260B055C00DD4A42 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A54A82B260B055C00DD4A42 /* amplifyconfiguration.json */; };
 		5A55FF1C260AE61A00438984 /* StoryboardId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A55FF1B260AE61A00438984 /* StoryboardId.swift */; };
@@ -97,6 +99,8 @@
 		5A40EB3F26080CD8002493FA /* MealSnapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealSnapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A40EB4326080CD8002493FA /* MealSnapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSnapUITests.swift; sourceTree = "<group>"; };
 		5A40EB4526080CD8002493FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A4423C42647515000A07C13 /* woosh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = woosh.mp3; sourceTree = "<group>"; };
+		5A4423C62647516300A07C13 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		5A54A82A260B055C00DD4A42 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		5A54A82B260B055C00DD4A42 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		5A55FF1B260AE61A00438984 /* StoryboardId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardId.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 		5A22A587261F91A10030286C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5A4423C32647513A00A07C13 /* Audio */,
 				5A5F2CDE2637F53C002087A5 /* Common */,
 				5A22A589261F91EA0030286C /* MealSnapAPI.swift */,
 				5AA228FB2622C9EA000022D5 /* MealSnapAPIError.swift */,
@@ -244,6 +249,15 @@
 				5A40EB4526080CD8002493FA /* Info.plist */,
 			);
 			path = MealSnapUITests;
+			sourceTree = "<group>";
+		};
+		5A4423C32647513A00A07C13 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				5A4423C42647515000A07C13 /* woosh.mp3 */,
+				5A4423C62647516300A07C13 /* AudioService.swift */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		5A55FF1A260AE60300438984 /* Config */ = {
@@ -441,6 +455,7 @@
 				5A04A1F22641F11E003FECB1 /* SearchUserTableViewCell.xib in Resources */,
 				5A40EB2B26080CD8002493FA /* Assets.xcassets in Resources */,
 				5A1FC4AC2639E8FC00863359 /* GalleryImageTableViewCell.xib in Resources */,
+				5A4423C52647515000A07C13 /* woosh.mp3 in Resources */,
 				5A40EB2926080CD7002493FA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,6 +607,7 @@
 				5A13366726093166008CC957 /* SignupViewController.swift in Sources */,
 				5A40EB2226080CD7002493FA /* AppDelegate.swift in Sources */,
 				5A40EB2426080CD7002493FA /* SceneDelegate.swift in Sources */,
+				5A4423C72647516300A07C13 /* AudioService.swift in Sources */,
 				5A734FB32609B8180008B576 /* SettingsViewController.swift in Sources */,
 				5AED5B11264091B600EA6565 /* User.swift in Sources */,
 				5A5F2CE22637F555002087A5 /* MealSnapAPIPageResponse.swift in Sources */,
