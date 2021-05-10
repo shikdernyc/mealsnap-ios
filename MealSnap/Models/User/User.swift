@@ -10,11 +10,15 @@ import Foundation
 struct UserSummary : Decodable {
     let userId: String
     let userName: String
+    var firstName: String? = nil
+    var lastName: String? = nil
 }
 
 struct SearchUserEntry :Decodable {
     let id: String
     let username: String
+    let firstName: String?
+    let lastName: String?
 }
 
 struct SearchUserResponse : Decodable {
@@ -27,14 +31,20 @@ enum UserError : Error {
 }
 
 class User {
-    static func FindUser(username: String, callback: @escaping ((Result<[UserSummary], UserError>) -> Void)) {
-        let url = "/search/user?username=" + username;
+    static func FindUser(query: String, callback: @escaping ((Result<[UserSummary], UserError>) -> Void)) {
+        let url = "/search/user?query=" + query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!;
         MealSnapAPI.GetRequest(route: url) {result in
             switch(result){
             case .success(var response):
                 do {
                     let parsedResponse = try response.parseData() as SearchUserResponse
-                    let userModels = parsedResponse.users.map {UserSummary(userId: $0.id, userName: $0.username) }
+                    print(parsedResponse)
+                    let userModels = parsedResponse.users.map {UserSummary(
+                        userId: $0.id,
+                        userName: $0.username,
+                        firstName: $0.firstName,
+                        lastName: $0.lastName
+                    )}
                     callback(.success(userModels))
                 } catch let error {
                     print(error)

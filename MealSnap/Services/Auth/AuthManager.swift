@@ -60,8 +60,18 @@ struct AuthManager {
         }
     }
     
-    static func signup(email: String, username: String, password: String, completion: @escaping(AuthOperationListender)){
-        let userAttributes = [AuthUserAttribute(.email, value: email)]
+    static func signup(
+        firstName: String,
+        lastName: String,
+        email: String,
+        username: String,
+        password: String,
+        completion: @escaping(AuthOperationListender)){
+        let userAttributes = [
+            AuthUserAttribute(.email, value: email),
+            AuthUserAttribute(.givenName, value: firstName),
+            AuthUserAttribute(.familyName, value: lastName)
+        ]
         let options = AuthSignUpRequest.Options(userAttributes: userAttributes)
         Amplify.Auth.signUp(username: username, password: password, options: options) { result in
             switch result {
@@ -77,6 +87,7 @@ struct AuthManager {
         Amplify.Auth.signOut(){result in
             switch result {
             case .success:
+                print("Successfully logged out!")
                 notifyAuthStateChange()
                 listener(.success(true))
             case .failure(let err):

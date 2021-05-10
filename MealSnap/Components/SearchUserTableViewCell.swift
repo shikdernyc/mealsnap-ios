@@ -9,6 +9,7 @@ import UIKit
 
 class SearchUserTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var displayNameLabel: UILabel!
     
     static let ID = "SearchUserTableViewCell"
     
@@ -25,6 +26,9 @@ class SearchUserTableViewCell: UITableViewCell {
     
     func configure(with user: UserSummary) {
         self.usernameLabel.text = user.userName
+        if((user.firstName != nil) && (user.lastName != nil)) {
+            self.displayNameLabel.text = "\(user.firstName!) \(user.lastName!)"
+        }
     }
     
     static func nib() -> UINib {
