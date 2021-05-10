@@ -61,11 +61,11 @@ extension ExploreViewController : UITableViewDataSource {
 
 extension ExploreViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard let username = textField.text else {
+        guard let query = textField.text else {
             return true
         }
         // TODO: Show Loading while fetching
-        User.FindUser(username: username) {result in
+        User.FindUser(query: query) {result in
             switch(result){
             case .success(let user):
                 self.updateSearchUserList(to: user)
