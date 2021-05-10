@@ -181,6 +181,7 @@
 		5A22A587261F91A10030286C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5A734FBB2609BA1C0008B576 /* Auth */,
 				5A4423C32647513A00A07C13 /* Audio */,
 				5A5F2CDE2637F53C002087A5 /* Common */,
 				5A22A589261F91EA0030286C /* MealSnapAPI.swift */,
@@ -283,7 +284,6 @@
 			children = (
 				5AED5B0F264091A800EA6565 /* User */,
 				5AFC293F261ECEB40058D20C /* UserGallery */,
-				5A734FBB2609BA1C0008B576 /* Auth */,
 			);
 			path = Models;
 			sourceTree = "<group>";
