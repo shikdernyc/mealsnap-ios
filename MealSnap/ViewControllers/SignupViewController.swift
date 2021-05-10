@@ -11,7 +11,8 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var errorMessageLabel: UILabel!
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,24 +21,19 @@ class SignupViewController: UIViewController {
     }
     
     func showError(message: String) -> Void {
-        DispatchQueue.main.async {
-            print("Showing error message")
-            self.errorMessageLabel.text = message
-            self.errorMessageLabel.isHidden = false
-        }
-    }
-    
-    func closeErrorMessage() -> Void {
-        DispatchQueue.main.async {
-            if self.errorMessageLabel.isHidden == false {
-                self.errorMessageLabel.isHidden = true
-            }
-        }
+        AlertComponent.showError(on: self, message: message)
     }
     
     @IBAction func handlePressSignup() {
         print("Handling signup")
-        self.closeErrorMessage()
+        guard firstNameTextField.text?.count != 0 else {
+            self.showError(message: "First Name is required")
+            return
+        }
+        guard lastNameTextField.text?.count != 0 else {
+            self.showError(message: "Last Name is required")
+            return
+        }
         guard usernameTextField.text?.count != 0 else {
             showError(message: "Username is required")
             return
@@ -50,7 +46,13 @@ class SignupViewController: UIViewController {
             self.showError(message: "Password is required")
             return
         }
-        AuthManager.signup(email: emailTextField.text!, username: usernameTextField.text!, password: passwordTextField.text!) { result in
+        AuthManager.signup(
+            firstName: firstNameTextField.text!,
+            lastName: lastNameTextField.text!,
+            email: emailTextField.text!,
+            username: usernameTextField.text!,
+            password: passwordTextField.text!
+        ) { result in
                 switch result {
                 case.failure(let error):
                     // TODO: Set Error Message
