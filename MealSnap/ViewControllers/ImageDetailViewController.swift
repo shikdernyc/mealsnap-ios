@@ -23,16 +23,7 @@ class ImageDetailViewController: UIViewController {
         }
         self.titleLabel.text = imageModel!.title
         self.descriptionLabel.text = imageModel!.description
-        ImageService.fetch(imageUrl: self.imageModel!.imageUrl) {result in
-            switch(result) {
-            case .success(let image):
-                self.imageView.image = image
-                return
-            case .failure(let error):
-                AlertComponent.showError(on: self, message: "Unable to fetch image")
-                print(error)
-            }
-        }
+        self.imageView.setImage(url: imageModel!.imageUrl, delegate: self)
         // Do any additional setup after loading the view.
     }
     
@@ -42,5 +33,12 @@ class ImageDetailViewController: UIViewController {
     
     func configure(with image: GalleryImage) {
         self.imageModel = image
+    }
+}
+
+extension ImageDetailViewController : UIImageViewSetImageUrlDelegate {
+    func onImageSetByUrlError(error: Error) {
+        AlertComponent.showError(on: self, message: "Unable to display image")
+        print(error)
     }
 }

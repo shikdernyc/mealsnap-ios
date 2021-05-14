@@ -34,6 +34,7 @@
 		5A40EB4426080CD8002493FA /* MealSnapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40EB4326080CD8002493FA /* MealSnapUITests.swift */; };
 		5A4423C52647515000A07C13 /* woosh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5A4423C42647515000A07C13 /* woosh.mp3 */; };
 		5A4423C72647516300A07C13 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4423C62647516300A07C13 /* AudioService.swift */; };
+		5A476D8D264E052400A5EDAB /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A476D8C264E052400A5EDAB /* UIImageView.swift */; };
 		5A54A82C260B055C00DD4A42 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A54A82A260B055C00DD4A42 /* awsconfiguration.json */; };
 		5A54A82D260B055C00DD4A42 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A54A82B260B055C00DD4A42 /* amplifyconfiguration.json */; };
 		5A55FF1C260AE61A00438984 /* StoryboardId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A55FF1B260AE61A00438984 /* StoryboardId.swift */; };
@@ -47,7 +48,6 @@
 		5AA229012622CA37000022D5 /* MealSnapAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */; };
 		5ACE48542642293F00975000 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE48532642293F00975000 /* Alert.swift */; };
 		5AD9639A26465A4000E22875 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9639926465A4000E22875 /* ImageDetailViewController.swift */; };
-		5AD9639C26465F4600E22875 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9639B26465F4600E22875 /* ImageService.swift */; };
 		5AED5B11264091B600EA6565 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AED5B10264091B600EA6565 /* User.swift */; };
 		5AFC2938261EB1C60058D20C /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC2937261EB1C60058D20C /* CreatePostViewController.swift */; };
 		5AFC2941261ECEE40058D20C /* UserGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC2940261ECEE40058D20C /* UserGallery.swift */; };
@@ -107,6 +107,7 @@
 		5A40EB4526080CD8002493FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A4423C42647515000A07C13 /* woosh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = woosh.mp3; sourceTree = "<group>"; };
 		5A4423C62647516300A07C13 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		5A476D8C264E052400A5EDAB /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		5A54A82A260B055C00DD4A42 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		5A54A82B260B055C00DD4A42 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		5A55FF1B260AE61A00438984 /* StoryboardId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardId.swift; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 		5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSnapAPIResponse.swift; sourceTree = "<group>"; };
 		5ACE48532642293F00975000 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		5AD9639926465A4000E22875 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
-		5AD9639B26465F4600E22875 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		5AED5B10264091B600EA6565 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5AFC2937261EB1C60058D20C /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		5AFC2940261ECEE40058D20C /* UserGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGallery.swift; sourceTree = "<group>"; };
@@ -175,6 +175,7 @@
 		5A13366B26093746008CC957 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5A476D8B264E04DB00A5EDAB /* Native */,
 				5A1FC4A92639E8FC00863359 /* GalleryImageTableViewCell.swift */,
 				5A1FC4AA2639E8FC00863359 /* GalleryImageTableViewCell.xib */,
 				5A04A1EF2641F11E003FECB1 /* SearchUserTableViewCell.swift */,
@@ -192,7 +193,6 @@
 				5A734FBD2609BA520008B576 /* AuthService.swift */,
 				5A476D8A264DFD6000A5EDAB /* MealSnapAPI */,
 				5A4423C32647513A00A07C13 /* Audio */,
-				5AD9639B26465F4600E22875 /* ImageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -275,6 +275,14 @@
 				5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */,
 			);
 			path = MealSnapAPI;
+			sourceTree = "<group>";
+		};
+		5A476D8B264E04DB00A5EDAB /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				5A476D8C264E052400A5EDAB /* UIImageView.swift */,
+			);
+			path = Native;
 			sourceTree = "<group>";
 		};
 		5A55FF1A260AE60300438984 /* Config */ = {
@@ -594,13 +602,13 @@
 				5A55FF1C260AE61A00438984 /* StoryboardId.swift in Sources */,
 				5A9475F2260BEF7F00C22186 /* MainViewController.swift in Sources */,
 				5A2B763326390E5400377272 /* Gallery.swift in Sources */,
+				5A476D8D264E052400A5EDAB /* UIImageView.swift in Sources */,
 				5A22A595261F92740030286C /* Services.swift in Sources */,
 				5A1FC4AB2639E8FC00863359 /* GalleryImageTableViewCell.swift in Sources */,
 				5A04A1F12641F11E003FECB1 /* SearchUserTableViewCell.swift in Sources */,
 				5A22A58A261F91EA0030286C /* MealSnapAPI.swift in Sources */,
 				5AA229012622CA37000022D5 /* MealSnapAPIResponse.swift in Sources */,
 				5AFC2941261ECEE40058D20C /* UserGallery.swift in Sources */,
-				5AD9639C26465F4600E22875 /* ImageService.swift in Sources */,
 				5A5F2CD22637F1BD002087A5 /* UserGalleryError.swift in Sources */,
 				5A13365F26092710008CC957 /* LoginViewController.swift in Sources */,
 				5A40EB2626080CD7002493FA /* Onboarding.swift in Sources */,

@@ -54,25 +54,12 @@ class GalleryImageTableViewCell: UITableViewCell {
         return UINib(nibName: ID, bundle: nil)
     }
     
-    private func setGalleryImage(to image: UIImage) {
-        self.galleryImageView.image = image
-        self.galleryImageView.contentMode = .scaleAspectFill
-    }
-    
     public func configure(with image: GalleryImage) {
         self.imageModel = image
         titleLabel.text = image.title
         likeCountLabel.text = String(image.likeCount)
         self.updateLikeView()
-        ImageService.fetch(imageUrl: image.imageUrl) { result in
-            switch(result){
-            case .success(let image):
-                self.setGalleryImage(to: image)
-                return
-            case .failure(let error):
-                print(error)
-                return
-            }
-        }
+        self.galleryImageView.setImage(url: image.imageUrl)
+        self.galleryImageView.contentMode = .scaleAspectFill
     }
 }
