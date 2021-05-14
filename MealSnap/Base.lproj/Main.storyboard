@@ -363,22 +363,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GK-ZX-Yhe">
-                                <rect key="frame" x="183" y="103" width="48" height="30"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="handleLogout" destination="S5c-p0-SKx" eventType="touchUpInside" id="oFj-hQ-FuB"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gcs-yc-Xpx">
+                                <rect key="frame" x="18" y="100" width="378" height="61"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Kn-Xh-y0n">
+                                        <rect key="frame" x="0.0" y="0.0" width="378" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hide Image Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWq-D5-oen">
+                                                <rect key="frame" x="0.0" y="0.0" width="329" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n2s-RA-v04">
+                                                <rect key="frame" x="329" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="onChangeHideImagePreference:" destination="S5c-p0-SKx" eventType="valueChanged" id="nV5-Fs-5MV"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="n2s-RA-v04" firstAttribute="leading" secondItem="oWq-D5-oen" secondAttribute="trailing" id="Ngb-Ul-QWo"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GK-ZX-Yhe">
+                                        <rect key="frame" x="0.0" y="31" width="378" height="30"/>
+                                        <state key="normal" title="Logout"/>
+                                        <connections>
+                                            <action selector="handleLogout" destination="S5c-p0-SKx" eventType="touchUpInside" id="oFj-hQ-FuB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YhJ-4O-sXa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0GK-ZX-Yhe" firstAttribute="top" secondItem="YhJ-4O-sXa" secondAttribute="top" constant="15" id="aqp-Kx-Nod"/>
-                            <constraint firstItem="0GK-ZX-Yhe" firstAttribute="centerX" secondItem="uyc-Ek-h3n" secondAttribute="centerX" id="nVD-XF-rNN"/>
+                            <constraint firstItem="gcs-yc-Xpx" firstAttribute="top" secondItem="YhJ-4O-sXa" secondAttribute="top" constant="12" id="5HW-fH-XVA"/>
+                            <constraint firstItem="gcs-yc-Xpx" firstAttribute="leading" secondItem="YhJ-4O-sXa" secondAttribute="leading" constant="18" id="Vjp-tW-XRI"/>
+                            <constraint firstItem="YhJ-4O-sXa" firstAttribute="trailing" secondItem="gcs-yc-Xpx" secondAttribute="trailing" constant="18" id="y5K-hx-nu0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="Fn2-j2-uT2"/>
+                    <connections>
+                        <outlet property="hideDetailSwitch" destination="n2s-RA-v04" id="XCf-nH-dpV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6zl-26-eJm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

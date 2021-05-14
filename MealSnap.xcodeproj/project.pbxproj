@@ -11,6 +11,9 @@
 		290F5498ABB0D8A156FED854 /* Pods_MealSnap_MealSnapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C9904A90FFEF342B44530C /* Pods_MealSnap_MealSnapUITests.framework */; };
 		5A04A1F12641F11E003FECB1 /* SearchUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04A1EF2641F11E003FECB1 /* SearchUserTableViewCell.swift */; };
 		5A04A1F22641F11E003FECB1 /* SearchUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A04A1F02641F11E003FECB1 /* SearchUserTableViewCell.xib */; };
+		5A09943C264DC57A00F53EE6 /* AppPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09943B264DC57A00F53EE6 /* AppPreference.swift */; };
+		5A09943F264DC97D00F53EE6 /* ImageOnlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A09943D264DC97D00F53EE6 /* ImageOnlyTableViewCell.swift */; };
+		5A099440264DC97D00F53EE6 /* ImageOnlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A09943E264DC97D00F53EE6 /* ImageOnlyTableViewCell.xib */; };
 		5A13365F26092710008CC957 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13365E26092710008CC957 /* LoginViewController.swift */; };
 		5A13366726093166008CC957 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A13366626093166008CC957 /* SignupViewController.swift */; };
 		5A1336752609418D008CC957 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1336742609418D008CC957 /* GalleryViewController.swift */; };
@@ -75,6 +78,9 @@
 		1753A9BA492E237D404BEDB9 /* Pods_MealSnapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealSnapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A04A1EF2641F11E003FECB1 /* SearchUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserTableViewCell.swift; sourceTree = "<group>"; };
 		5A04A1F02641F11E003FECB1 /* SearchUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchUserTableViewCell.xib; sourceTree = "<group>"; };
+		5A09943B264DC57A00F53EE6 /* AppPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPreference.swift; sourceTree = "<group>"; };
+		5A09943D264DC97D00F53EE6 /* ImageOnlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOnlyTableViewCell.swift; sourceTree = "<group>"; };
+		5A09943E264DC97D00F53EE6 /* ImageOnlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageOnlyTableViewCell.xib; sourceTree = "<group>"; };
 		5A13365E26092710008CC957 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5A13366626093166008CC957 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		5A1336742609418D008CC957 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +172,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5A09943A264DC56800F53EE6 /* Preference */ = {
+			isa = PBXGroup;
+			children = (
+				5A09943B264DC57A00F53EE6 /* AppPreference.swift */,
+			);
+			path = Preference;
+			sourceTree = "<group>";
+		};
 		5A13366B26093746008CC957 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +188,8 @@
 				5A04A1EF2641F11E003FECB1 /* SearchUserTableViewCell.swift */,
 				5A04A1F02641F11E003FECB1 /* SearchUserTableViewCell.xib */,
 				5ACE48532642293F00975000 /* Alert.swift */,
+				5A09943D264DC97D00F53EE6 /* ImageOnlyTableViewCell.swift */,
+				5A09943E264DC97D00F53EE6 /* ImageOnlyTableViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -282,6 +298,7 @@
 		5A734FBA2609BA160008B576 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5A09943A264DC56800F53EE6 /* Preference */,
 				5AED5B0F264091A800EA6565 /* User */,
 				5AFC293F261ECEB40058D20C /* UserGallery */,
 			);
@@ -451,6 +468,7 @@
 			files = (
 				5A54A82C260B055C00DD4A42 /* awsconfiguration.json in Resources */,
 				5A40EB2E26080CD8002493FA /* LaunchScreen.storyboard in Resources */,
+				5A099440264DC97D00F53EE6 /* ImageOnlyTableViewCell.xib in Resources */,
 				5A54A82D260B055C00DD4A42 /* amplifyconfiguration.json in Resources */,
 				5A04A1F22641F11E003FECB1 /* SearchUserTableViewCell.xib in Resources */,
 				5A40EB2B26080CD8002493FA /* Assets.xcassets in Resources */,
@@ -586,6 +604,7 @@
 			files = (
 				5AA228FC2622C9EA000022D5 /* MealSnapAPIError.swift in Sources */,
 				5AFC2938261EB1C60058D20C /* CreatePostViewController.swift in Sources */,
+				5A09943C264DC57A00F53EE6 /* AppPreference.swift in Sources */,
 				5A1336752609418D008CC957 /* GalleryViewController.swift in Sources */,
 				5ACE48542642293F00975000 /* Alert.swift in Sources */,
 				5A55FF1C260AE61A00438984 /* StoryboardId.swift in Sources */,
@@ -609,6 +628,7 @@
 				5A40EB2426080CD7002493FA /* SceneDelegate.swift in Sources */,
 				5A4423C72647516300A07C13 /* AudioService.swift in Sources */,
 				5A734FB32609B8180008B576 /* SettingsViewController.swift in Sources */,
+				5A09943F264DC97D00F53EE6 /* ImageOnlyTableViewCell.swift in Sources */,
 				5AED5B11264091B600EA6565 /* User.swift in Sources */,
 				5A5F2CE22637F555002087A5 /* MealSnapAPIPageResponse.swift in Sources */,
 				5A27CDCD2643BDB00057F7A9 /* GalleryImage.swift in Sources */,
