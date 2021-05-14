@@ -18,7 +18,7 @@ class GalleryViewController: UIViewController {
     private var requestedTitle = ""
     
     private var refreshPlayer : AVAudioPlayer? = nil
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,14 +38,14 @@ class GalleryViewController: UIViewController {
         galleryTableView.refreshControl?.addTarget(self, action: #selector(handleRefreshData), for: .valueChanged)
         if userId.count == 0 {
             do {
-                let user = try AuthManager.CurrentUser()
+                let user = try AuthService.CurrentUser()
                 self.configure(for: user.userId)
             } catch let error {
                 print(error)
             }
         }
         self.loadInitialData()
-
+        
         // User Preference Listender
         UserPreference.HideImageDetail() { _ in
             self.reloadGalleryData()
@@ -92,26 +92,12 @@ class GalleryViewController: UIViewController {
             switch(result){
             case .success(let gallery):
                 self.userGallery = gallery
+                self.userGallery?.itemUpdateDelegate = self
                 self.reloadGalleryData()
                 callback?(.success(true))
             case .failure(let error):
                 callback?(.failure(error))
                 print(error)
-            }
-        }
-    }
-    
-    private func loadMoreData() {
-        if self.userGallery?.canFetchMore() == true {
-            print("Loading More data")
-            self.userGallery?.loadMore() { result in
-                switch(result){
-                case .success:
-                    self.reloadGalleryData()
-                case .failure(let error):
-                    print(error)
-                }
-                
             }
         }
     }
@@ -159,16 +145,18 @@ extension GalleryViewController {
         let position = scrollView.contentOffset.y
         if position > (galleryTableView.contentSize.height - 600 - scrollView.frame.size.height){
             print("Loading More")
-            userGallery?.loadMore() { result in
-                switch(result){
-                case .success:
-                    self.reloadGalleryData()
-                    return
-                case .failure(let error):
-                    print("Failed to load more")
-                    print(error)
-                }
-            }
+            userGallery?.loadMore()
         }
+    }
+}
+
+extension GalleryViewController : UserGalleryItemsUpdateDelegate {
+    func itemListDidUpdate(newItems: [GalleryImage]) {
+        self.reloadGalleryData()
+    }
+    
+    func itemListUpdateError(error: UserGalleryError) {
+        print(error)
+        AlertComponent.showError(on: self, message: "An error occured trying to load more data")
     }
 }
