@@ -192,7 +192,6 @@
 				5A734FBD2609BA520008B576 /* AuthService.swift */,
 				5A476D8A264DFD6000A5EDAB /* MealSnapAPI */,
 				5A4423C32647513A00A07C13 /* Audio */,
-				5A5F2CDE2637F53C002087A5 /* Common */,
 				5AD9639B26465F4600E22875 /* ImageService.swift */,
 			);
 			path = Services;
@@ -270,6 +269,7 @@
 		5A476D8A264DFD6000A5EDAB /* MealSnapAPI */ = {
 			isa = PBXGroup;
 			children = (
+				5A5F2CDE2637F53C002087A5 /* Common */,
 				5A22A589261F91EA0030286C /* MealSnapAPI.swift */,
 				5AA228FB2622C9EA000022D5 /* MealSnapAPIError.swift */,
 				5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */,
@@ -300,6 +300,7 @@
 			children = (
 				5A09943B264DC57A00F53EE6 /* AppPreference.swift */,
 				5AED5B10264091B600EA6565 /* User.swift */,
+				5A27CDCC2643BDB00057F7A9 /* GalleryImage.swift */,
 				5AFC293F261ECEB40058D20C /* UserGallery */,
 			);
 			path = Models;
@@ -327,7 +328,6 @@
 				5AFC2940261ECEE40058D20C /* UserGallery.swift */,
 				5A5F2CD12637F1BD002087A5 /* UserGalleryError.swift */,
 				5A5F2CD62637F1FF002087A5 /* UserGalleryAPIResponse.swift */,
-				5A27CDCC2643BDB00057F7A9 /* GalleryImage.swift */,
 			);
 			path = UserGallery;
 			sourceTree = "<group>";

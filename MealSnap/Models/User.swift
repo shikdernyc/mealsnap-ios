@@ -14,7 +14,7 @@ struct UserSummary : Decodable {
     var lastName: String? = nil
 }
 
-struct SearchUserEntry :Decodable {
+struct SearchUserEntry : Decodable {
     let id: String
     let username: String
     let firstName: String?

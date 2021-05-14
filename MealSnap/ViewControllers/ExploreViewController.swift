@@ -41,7 +41,7 @@ extension ExploreViewController : UITableViewDelegate {
                 AlertComponent.showError(on: self, message: "Unable to navigate to user's page")
                 return
             }
-            galleryVC.configure(for: user.userId, username: user.userName)
+            galleryVC.configure(for: user)
             self.navigationController?.pushViewController(galleryVC, animated: true)
         }
     }

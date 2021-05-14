@@ -13,11 +13,13 @@ class GalleryViewController: UIViewController {
     
     private var userGallery: UserGallery?
     
-    private var userId: String = ""
-    
-    private var requestedTitle = ""
+    private var user: UserSummary?
     
     private var refreshPlayer : AVAudioPlayer? = nil
+    
+    public func configure(for user: UserSummary) {
+        self.user = user
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +37,10 @@ class GalleryViewController: UIViewController {
         galleryTableView.delegate = self
         galleryTableView.dataSource = self
         galleryTableView.refreshControl = UIRefreshControl()
-        galleryTableView.refreshControl?.addTarget(self, action: #selector(handleRefreshData), for: .valueChanged)
-        if userId.count == 0 {
+        galleryTableView.refreshControl?.addTarget(self, action: #selector(handleRefreshUserGallery), for: .valueChanged)
+        if user == nil {
             do {
-                let user = try AuthService.CurrentUser()
-                self.configure(for: user.userId)
+                self.user = try AuthService.CurrentUser()
             } catch let error {
                 print(error)
             }
@@ -48,33 +49,30 @@ class GalleryViewController: UIViewController {
         
         // User Preference Listender
         UserPreference.HideImageDetail() { _ in
-            self.reloadGalleryData()
+            self.reloadGalleryView()
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if (requestedTitle.count != 0) {
-            self.navigationController?.navigationBar.topItem?.title = requestedTitle
-            requestedTitle = ""
+        do{
+            let currentAuthUser = try AuthService.CurrentUser()
+            if currentAuthUser.userId != self.user?.userId {
+                self.navigationController?.navigationBar.topItem?.title = self.user?.userName
+            }else {
+                self.navigationController?.navigationBar.topItem?.title = "Profile"
+            }
+        }catch {
+            print("Unable to fetch current user")
         }
     }
     
-    public func configure(for userId: String, username:String? = nil) {
-        print("Configuring for " + userId)
-        if username != nil{
-            // TODO: This is confusing. Centralize starting this activity using configure from both other pages as well as view controller
-            self.requestedTitle = username!
-        }
-        self.userId = userId
-    }
-    
-    private func reloadGalleryData() {
+    private func reloadGalleryView() {
         DispatchQueue.main.async {
             self.galleryTableView.reloadData()
         }
     }
     
-    @objc private func handleRefreshData() -> Void {
+    @objc private func handleRefreshUserGallery() -> Void {
         DispatchQueue.main.async {
             self.galleryTableView.refreshControl?.beginRefreshing()
         }
@@ -83,17 +81,17 @@ class GalleryViewController: UIViewController {
                 self.refreshPlayer?.play()
                 self.galleryTableView.refreshControl?.endRefreshing()
             }
-            self.reloadGalleryData()
+            self.reloadGalleryView()
         }
     }
     
     private func loadInitialData(callback: ((Result<Bool, Error>) -> Void)? = nil) -> Void {
-        UserGallery.GetGalleryForUser(userId: self.userId){result in
+        UserGallery.GetGalleryForUser(userId: self.user!.userId){result in
             switch(result){
             case .success(let gallery):
                 self.userGallery = gallery
                 self.userGallery?.itemUpdateDelegate = self
-                self.reloadGalleryData()
+                self.reloadGalleryView()
                 callback?(.success(true))
             case .failure(let error):
                 callback?(.failure(error))
@@ -137,6 +135,7 @@ extension GalleryViewController : UITableViewDataSource {
     }
 }
 
+// ============= Handling Pagination =============
 extension GalleryViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard userGallery?.canFetchMore() == true else {
@@ -150,9 +149,10 @@ extension GalleryViewController {
     }
 }
 
+// ============= Handle Update to Gallery List Item =============
 extension GalleryViewController : UserGalleryItemsUpdateDelegate {
     func itemListDidUpdate(newItems: [GalleryImage]) {
-        self.reloadGalleryData()
+        self.reloadGalleryView()
     }
     
     func itemListUpdateError(error: UserGalleryError) {

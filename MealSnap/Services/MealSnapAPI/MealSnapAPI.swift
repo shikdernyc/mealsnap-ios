@@ -32,7 +32,7 @@ struct MealSnapAPI {
                 return
             }
         }
-
+        
     }
     
     static func PostRequest<T: Encodable>(route:String, body: T, completionHandler: @escaping APIRequestCompletionHandler) {
@@ -63,7 +63,7 @@ struct MealSnapAPI {
             }
         }
     }
-        
+    
     private static func MakeRequest(with request: URLRequest, completionHandler: @escaping APIRequestCompletionHandler) {
         URLSession.shared.dataTask(with: request) {data, response, error in
             if error != nil {

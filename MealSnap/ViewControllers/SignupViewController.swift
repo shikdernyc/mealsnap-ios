@@ -16,7 +16,7 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -53,33 +53,33 @@ class SignupViewController: UIViewController {
             username: usernameTextField.text!,
             password: passwordTextField.text!
         ) { result in
-                switch result {
-                case.failure(let error):
-                    // TODO: Set Error Message
-                    print("error happened")
-                    print(error)
-                    print("Description: \(error.errorDescription)")
-                    self.showError(message: error.errorDescription)
-                    return
-                case .success:
-                    DispatchQueue.main.async {
-                        guard let confirmationVC = self.storyboard?.instantiateViewController(identifier: StoryboardId.SignupConfirmationViewController.rawValue) else {
-                            return
-                        }
-                        self.navigationController?.pushViewController(confirmationVC, animated: true)
+            switch result {
+            case.failure(let error):
+                // TODO: Set Error Message
+                print("error happened")
+                print(error)
+                print("Description: \(error.errorDescription)")
+                self.showError(message: error.errorDescription)
+                return
+            case .success:
+                DispatchQueue.main.async {
+                    guard let confirmationVC = self.storyboard?.instantiateViewController(identifier: StoryboardId.SignupConfirmationViewController.rawValue) else {
+                        return
                     }
-                    return
+                    self.navigationController?.pushViewController(confirmationVC, animated: true)
+                }
+                return
             }
         }
     }
 }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ }
+ */
 

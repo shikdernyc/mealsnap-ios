@@ -129,13 +129,13 @@ extension AuthService {
         Amplify.Auth.fetchAuthSession { result in
             do {
                 let session = try result.get()
-
+                
                 // Get cognito user pool token
                 if let cognitoTokenProvider = session as? AuthCognitoTokensProvider {
                     let tokens = try cognitoTokenProvider.getCognitoTokens().get()
                     completionHandler(.success(tokens.idToken))
                 }
-
+                
             } catch let error {
                 completionHandler(.failure(error))
                 print("Fetch auth session failed with error - \(error)")

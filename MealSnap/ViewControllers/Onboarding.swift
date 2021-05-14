@@ -18,5 +18,5 @@ class OnboardingViewController: UIViewController {
         print("loaded onboarding vc")
         // Do any additional setup after loading the view.
     }
-
+    
 }
