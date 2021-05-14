@@ -46,7 +46,7 @@ class SignupViewController: UIViewController {
             self.showError(message: "Password is required")
             return
         }
-        AuthManager.signup(
+        AuthService.signup(
             firstName: firstNameTextField.text!,
             lastName: lastNameTextField.text!,
             email: emailTextField.text!,

@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
             self.showError(message: "Password is required")
             return
         }
-        AuthManager.login(username: email, password: password) { result in
+        AuthService.login(username: email, password: password) { result in
             switch result{
             case.failure(let error):
                 // TODO: Set Error Message

@@ -21,7 +21,7 @@ struct MealSnapAPI {
         }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        AuthManager.RetrieveJWTToken() {tokenResult in
+        AuthService.RetrieveJWTToken() {tokenResult in
             switch (tokenResult) {
             case .success(let token):
                 request.setValue(token, forHTTPHeaderField: "Authorization")
@@ -51,7 +51,7 @@ struct MealSnapAPI {
         }catch {
             completionHandler(.failure(.RequestBodyEncodingError))
         }
-        AuthManager.RetrieveJWTToken() {tokenResult in
+        AuthService.RetrieveJWTToken() {tokenResult in
             switch (tokenResult) {
             case .success(let token):
                 request.setValue(token, forHTTPHeaderField: "Authorization")

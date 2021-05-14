@@ -22,7 +22,7 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func handleLogout() {
-        AuthManager.logout(){_ in }
+        AuthService.logout(){_ in }
     }
 
     /*
