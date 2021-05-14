@@ -41,7 +41,7 @@
 		5A5F2CD72637F1FF002087A5 /* UserGalleryAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F2CD62637F1FF002087A5 /* UserGalleryAPIResponse.swift */; };
 		5A5F2CE22637F555002087A5 /* MealSnapAPIPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F2CE12637F555002087A5 /* MealSnapAPIPageResponse.swift */; };
 		5A734FB32609B8180008B576 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A734FB22609B8180008B576 /* SettingsViewController.swift */; };
-		5A734FBE2609BA520008B576 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A734FBD2609BA520008B576 /* AuthManager.swift */; };
+		5A734FBE2609BA520008B576 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A734FBD2609BA520008B576 /* AuthService.swift */; };
 		5A9475F2260BEF7F00C22186 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9475F1260BEF7F00C22186 /* MainViewController.swift */; };
 		5AA228FC2622C9EA000022D5 /* MealSnapAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA228FB2622C9EA000022D5 /* MealSnapAPIError.swift */; };
 		5AA229012622CA37000022D5 /* MealSnapAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */; };
@@ -114,7 +114,7 @@
 		5A5F2CD62637F1FF002087A5 /* UserGalleryAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGalleryAPIResponse.swift; sourceTree = "<group>"; };
 		5A5F2CE12637F555002087A5 /* MealSnapAPIPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSnapAPIPageResponse.swift; sourceTree = "<group>"; };
 		5A734FB22609B8180008B576 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		5A734FBD2609BA520008B576 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		5A734FBD2609BA520008B576 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5A9475F1260BEF7F00C22186 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5AA228FB2622C9EA000022D5 /* MealSnapAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSnapAPIError.swift; sourceTree = "<group>"; };
 		5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSnapAPIResponse.swift; sourceTree = "<group>"; };
@@ -172,14 +172,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		5A09943A264DC56800F53EE6 /* Preference */ = {
-			isa = PBXGroup;
-			children = (
-				5A09943B264DC57A00F53EE6 /* AppPreference.swift */,
-			);
-			path = Preference;
-			sourceTree = "<group>";
-		};
 		5A13366B26093746008CC957 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,12 +189,10 @@
 		5A22A587261F91A10030286C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				5A734FBB2609BA1C0008B576 /* Auth */,
+				5A734FBD2609BA520008B576 /* AuthService.swift */,
+				5A476D8A264DFD6000A5EDAB /* MealSnapAPI */,
 				5A4423C32647513A00A07C13 /* Audio */,
 				5A5F2CDE2637F53C002087A5 /* Common */,
-				5A22A589261F91EA0030286C /* MealSnapAPI.swift */,
-				5AA228FB2622C9EA000022D5 /* MealSnapAPIError.swift */,
-				5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */,
 				5AD9639B26465F4600E22875 /* ImageService.swift */,
 			);
 			path = Services;
@@ -277,6 +267,16 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
+		5A476D8A264DFD6000A5EDAB /* MealSnapAPI */ = {
+			isa = PBXGroup;
+			children = (
+				5A22A589261F91EA0030286C /* MealSnapAPI.swift */,
+				5AA228FB2622C9EA000022D5 /* MealSnapAPIError.swift */,
+				5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */,
+			);
+			path = MealSnapAPI;
+			sourceTree = "<group>";
+		};
 		5A55FF1A260AE60300438984 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,19 +298,11 @@
 		5A734FBA2609BA160008B576 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5A09943A264DC56800F53EE6 /* Preference */,
-				5AED5B0F264091A800EA6565 /* User */,
+				5A09943B264DC57A00F53EE6 /* AppPreference.swift */,
+				5AED5B10264091B600EA6565 /* User.swift */,
 				5AFC293F261ECEB40058D20C /* UserGallery */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		5A734FBB2609BA1C0008B576 /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				5A734FBD2609BA520008B576 /* AuthManager.swift */,
-			);
-			path = Auth;
 			sourceTree = "<group>";
 		};
 		5AA583EF260827500009FFEC /* ViewControllers */ = {
@@ -327,14 +319,6 @@
 				5AD9639926465A4000E22875 /* ImageDetailViewController.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		5AED5B0F264091A800EA6565 /* User */ = {
-			isa = PBXGroup;
-			children = (
-				5AED5B10264091B600EA6565 /* User.swift */,
-			);
-			path = User;
 			sourceTree = "<group>";
 		};
 		5AFC293F261ECEB40058D20C /* UserGallery */ = {
@@ -632,7 +616,7 @@
 				5AED5B11264091B600EA6565 /* User.swift in Sources */,
 				5A5F2CE22637F555002087A5 /* MealSnapAPIPageResponse.swift in Sources */,
 				5A27CDCD2643BDB00057F7A9 /* GalleryImage.swift in Sources */,
-				5A734FBE2609BA520008B576 /* AuthManager.swift in Sources */,
+				5A734FBE2609BA520008B576 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
