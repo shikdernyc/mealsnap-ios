@@ -61,16 +61,16 @@ class CreatePostViewController: UIViewController {
         }
         UserGallery.AddImage(title: titleInput.text!, description: descriptionTextView.text!, imageData: imageData) { result in
             switch (result){
-                case .success(let galleryImage):
-                    print(galleryImage)
-                    self.onPostSuccessful()
+            case .success(let galleryImage):
+                print(galleryImage)
+                self.onPostSuccessful()
+                return
+            case .failure(let error):
+                switch(error){
+                case .APIError(let message):
+                    self.showError(message: message)
                     return
-                case .failure(let error):
-                    switch(error){
-                    case .APIError(let message):
-                        self.showError(message: message)
-                        return
-                    }
+                }
             }
         }
     }
@@ -106,7 +106,7 @@ class CreatePostViewController: UIViewController {
     func cancelUpload() {
         self.navigationController?.popViewController(animated: true)
     }
-
+    
 }
 
 extension CreatePostViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {

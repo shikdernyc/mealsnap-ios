@@ -21,7 +21,7 @@ enum  AuthManagerError : Error {
 
 typealias RestoreUserCompletion = (Result<Bool, Error>) -> Void
 
-struct AuthManager {
+struct AuthService {
     static func login(username: String, password: String, completion: @escaping(AuthOperationListender)) {
         Amplify.Auth.signIn(username: username, password: password) { result in
             switch result {
@@ -106,36 +106,36 @@ protocol AuthStateChangeHandler : AnyObject {
     func onAuthStateChange(isAuthenticated: Bool) -> Void
 }
 
-extension AuthManager {
+extension AuthService {
     private static var authChangeObservers = [ObjectIdentifier : AuthStateChangeHandler]()
     
-    private static func notifyAuthStateChange(with newState: Bool = AuthManager.isAuthenticated()) {
-        for (_, observer) in AuthManager.authChangeObservers {
+    private static func notifyAuthStateChange(with newState: Bool = AuthService.isAuthenticated()) {
+        for (_, observer) in AuthService.authChangeObservers {
             observer.onAuthStateChange(isAuthenticated: newState)
         }
     }
     
     static func onAuthStateChange(run handler: AuthStateChangeHandler){
-        AuthManager.authChangeObservers[ObjectIdentifier(handler)] = handler
+        AuthService.authChangeObservers[ObjectIdentifier(handler)] = handler
     }
     
     static func removeAuthStateChangeHandler(handler: AuthStateChangeHandler){
-        AuthManager.authChangeObservers.removeValue(forKey: ObjectIdentifier(handler))
+        AuthService.authChangeObservers.removeValue(forKey: ObjectIdentifier(handler))
     }
 }
 
-extension AuthManager {
+extension AuthService {
     static func RetrieveJWTToken(completionHandler: @escaping (Result<String, Error>) -> Void) -> Void {
         Amplify.Auth.fetchAuthSession { result in
             do {
                 let session = try result.get()
-
+                
                 // Get cognito user pool token
                 if let cognitoTokenProvider = session as? AuthCognitoTokensProvider {
                     let tokens = try cognitoTokenProvider.getCognitoTokens().get()
                     completionHandler(.success(tokens.idToken))
                 }
-
+                
             } catch let error {
                 completionHandler(.failure(error))
                 print("Fetch auth session failed with error - \(error)")

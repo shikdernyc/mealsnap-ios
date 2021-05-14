@@ -21,7 +21,7 @@ struct MealSnapAPI {
         }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        AuthManager.RetrieveJWTToken() {tokenResult in
+        AuthService.RetrieveJWTToken() {tokenResult in
             switch (tokenResult) {
             case .success(let token):
                 request.setValue(token, forHTTPHeaderField: "Authorization")
@@ -32,7 +32,7 @@ struct MealSnapAPI {
                 return
             }
         }
-
+        
     }
     
     static func PostRequest<T: Encodable>(route:String, body: T, completionHandler: @escaping APIRequestCompletionHandler) {
@@ -51,7 +51,7 @@ struct MealSnapAPI {
         }catch {
             completionHandler(.failure(.RequestBodyEncodingError))
         }
-        AuthManager.RetrieveJWTToken() {tokenResult in
+        AuthService.RetrieveJWTToken() {tokenResult in
             switch (tokenResult) {
             case .success(let token):
                 request.setValue(token, forHTTPHeaderField: "Authorization")
@@ -63,7 +63,7 @@ struct MealSnapAPI {
             }
         }
     }
-        
+    
     private static func MakeRequest(with request: URLRequest, completionHandler: @escaping APIRequestCompletionHandler) {
         URLSession.shared.dataTask(with: request) {data, response, error in
             if error != nil {

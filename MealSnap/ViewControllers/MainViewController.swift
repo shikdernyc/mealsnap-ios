@@ -20,7 +20,7 @@ class MainViewController: UIViewController, AuthStateChangeHandler {
                 return
             }
         }
-        AuthManager.onAuthStateChange(run: self)
+        AuthService.onAuthStateChange(run: self)
         self.fetchCurrentAuthSession()
     }
     
@@ -52,7 +52,7 @@ class MainViewController: UIViewController, AuthStateChangeHandler {
     }
     
     func fetchCurrentAuthSession() {
-        AuthManager.restoreSavedUser() { result in
+        AuthService.restoreSavedUser() { result in
             switch result {
             case .success:
                 print("Restored User")

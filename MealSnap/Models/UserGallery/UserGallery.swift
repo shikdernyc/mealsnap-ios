@@ -7,11 +7,17 @@
 
 import Foundation
 
+protocol UserGalleryItemsUpdateDelegate {
+    func itemListDidUpdate(newItems: [GalleryImage]) -> Void
+    func itemListUpdateError(error: UserGalleryError) -> Void
+}
+
 class UserGallery {
     private var userId: String
     private var galleryImages: [GalleryImage]
     private var nextPage: String?
     private var paginating: Bool
+    public var itemUpdateDelegate: UserGalleryItemsUpdateDelegate?
     
     private init(items: [GalleryImageResponse], page: MealSnapAPIPageResponse? = nil, userId: String) {
         self.galleryImages = items.map {
@@ -30,7 +36,7 @@ class UserGallery {
         return self.paginating == false && self.nextPage != nil
     }
     
-    func loadMore(handler: @escaping ((Result<Bool, UserGalleryError>) -> Void)) {
+    func loadMore() {
         guard let url = nextPage else {
             return
         }
@@ -43,17 +49,17 @@ class UserGallery {
                 }
                 self.galleryImages.append(contentsOf: newImages)
                 self.nextPage = response.page?.next
-                handler(.success(true))
                 self.paginating = false
+                self.itemUpdateDelegate?.itemListDidUpdate(newItems: self.galleryImages)
                 return
             }catch let error {
                 self.paginating = false
                 switch(error) {
                 case let apiError as UserGalleryError:
-                    handler(.failure(apiError))
+                    self.itemUpdateDelegate?.itemListUpdateError(error: apiError)
                     return
                 default:
-                    handler(.failure(UserGalleryError.APIError(message: "Something went wrong")))
+                    self.itemUpdateDelegate?.itemListUpdateError(error: UserGalleryError.APIError(message: "Something went wrong"))
                 }
             }
         }
@@ -75,7 +81,7 @@ extension UserGallery {
             switch(result){
             case .success(var response):
                 do{
-                    let userId = try AuthManager.CurrentUser().userId
+                    let userId = try AuthService.CurrentUser().userId
                     let galleryImage = try response.parseData() as GalleryImageResponse
                     completionHandler(.success(GalleryImage.from(apiImage: galleryImage, ownerId: userId)))
                     return
