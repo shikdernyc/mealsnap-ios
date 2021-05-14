@@ -27,7 +27,6 @@ class ImageDetailViewController: UIViewController {
             switch(result) {
             case .success(let image):
                 self.imageView.image = image
-                print("Fetched")
                 return
             case .failure(let error):
                 AlertComponent.showError(on: self, message: "Unable to fetch image")
@@ -35,6 +34,10 @@ class ImageDetailViewController: UIViewController {
             }
         }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.topItem?.title = imageModel?.title
     }
     
     func configure(with image: GalleryImage) {

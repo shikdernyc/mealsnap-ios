@@ -18,16 +18,20 @@ class GalleryViewController: UIViewController {
     private var requestedTitle = ""
     
     private var refreshPlayer : AVAudioPlayer? = nil
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Loaded")
+        
+        // Setup Audio Player
         do {
             self.refreshPlayer = try AudioService.Player(for: .Refresh)
         }catch let error {
             print(error)
         }
+        
+        // Setup Gallery Table View
         galleryTableView.register(GalleryImageTableViewCell.nib(), forCellReuseIdentifier: GalleryImageTableViewCell.ID)
+        galleryTableView.register(ImageOnlyTableViewCell.nib(), forCellReuseIdentifier: ImageOnlyTableViewCell.ID)
         galleryTableView.delegate = self
         galleryTableView.dataSource = self
         galleryTableView.refreshControl = UIRefreshControl()
@@ -41,6 +45,11 @@ class GalleryViewController: UIViewController {
             }
         }
         self.loadInitialData()
+
+        // User Preference Listender
+        UserPreference.HideImageDetail() { _ in
+            self.reloadGalleryData()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -79,7 +88,6 @@ class GalleryViewController: UIViewController {
     }
     
     private func loadInitialData(callback: ((Result<Bool, Error>) -> Void)? = nil) -> Void {
-
         UserGallery.GetGalleryForUser(userId: self.userId){result in
             switch(result){
             case .success(let gallery):
@@ -128,6 +136,11 @@ extension GalleryViewController : UITableViewDelegate {
 
 extension GalleryViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if UserPreference.HideImageDetail() {
+            let cell = tableView.dequeueReusableCell(withIdentifier: ImageOnlyTableViewCell.ID, for: indexPath) as! ImageOnlyTableViewCell
+            cell.configure(with: userGallery!.items()[indexPath.row])
+            return cell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: GalleryImageTableViewCell.ID, for: indexPath) as! GalleryImageTableViewCell
         cell.configure(with: userGallery!.items()[indexPath.row])
         return cell
