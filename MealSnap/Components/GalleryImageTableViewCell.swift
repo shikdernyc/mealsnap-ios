@@ -14,6 +14,7 @@ class GalleryImageTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
+    private var imageLoadingIndicator : UIActivityIndicatorView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,7 +40,6 @@ class GalleryImageTableViewCell: UITableViewCell {
                 self.updateLikeView()
                 return
             case .success(_):
-                print("Image liked")
                 return
             }
         }

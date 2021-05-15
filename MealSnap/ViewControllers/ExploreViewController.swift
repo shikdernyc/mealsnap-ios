@@ -12,6 +12,7 @@ class ExploreViewController: UIViewController {
     @IBOutlet weak var usernameInput: UITextField!
     
     private var searchedUsers: [UserSummary] = []
+    private var searchLoadingIndicator: UIActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class ExploreViewController: UIViewController {
         searchUserTable.delegate = self
         searchUserTable.dataSource = self
         usernameInput.delegate = self
+        self.searchLoadingIndicator = LoadingIndicatorAddon.Attach(to: searchUserTable)
         // Do any additional setup after loading the view.
     }
     
@@ -60,11 +62,21 @@ extension ExploreViewController : UITableViewDataSource {
 }
 
 extension ExploreViewController : UITextFieldDelegate {
+    private func showLoading(to value: Bool = true) {
+        DispatchQueue.main.async {
+            if value {
+                self.searchLoadingIndicator?.startAnimating()
+            }else{
+                self.searchLoadingIndicator?.stopAnimating()
+            }
+        }
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let query = textField.text else {
             return true
         }
-        // TODO: Show Loading while fetching
+        self.showLoading()
         User.FindUser(query: query) {result in
             switch(result){
             case .success(let user):
@@ -73,8 +85,8 @@ extension ExploreViewController : UITextFieldDelegate {
                 self.updateSearchUserList(to: [])
                 print(error)
                 AlertComponent.showError(on: self, message: error.localizedDescription)
-                return
             }
+            self.showLoading(to: false)
         }
         return true
     }

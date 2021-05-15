@@ -35,17 +35,18 @@ extension UIImageView {
     }
     
     func setImage(url: String, delegate: UIImageViewSetImageUrlDelegate? = nil) {
+        let imageLoadingIndicator = LoadingIndicatorAddon.Attach(to: self)
+        imageLoadingIndicator.startAnimating()
         UIImageView.FetchImage(imageUrl: url) { result in
             switch(result){
             case .success(let image):
                 self.image = image
                 delegate?.onImageSetByUrl?()
-                return
             case .failure(let error):
-                // TODO: Need Better Error Handling
                 delegate?.onImageSetByUrlError?(error: error)
                 print(error)
             }
+            imageLoadingIndicator.stopAnimating()
         }
     }
 }
