@@ -26,11 +26,6 @@ class MainViewController: UIViewController, AuthStateChangeHandler {
     
     func onAuthStateChange(isAuthenticated: Bool) {
         print("Onboarding Auth State: \(isAuthenticated)")
-        if(isAuthenticated){
-            self.navToAuthVC()
-        }else{
-            self.navToOnboardingVC()
-        }
     }
     
     private func navToAuthVC() {
@@ -55,7 +50,7 @@ class MainViewController: UIViewController, AuthStateChangeHandler {
         AuthService.restoreSavedUser() { result in
             switch result {
             case .success:
-                print("Restored User")
+                self.navToAuthVC()
             case .failure:
                 self.navToOnboardingVC()
             }

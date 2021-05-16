@@ -43,7 +43,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.99996906519999995" green="0.74121242759999995" blue="0.34899860620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fiT-av-H8B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JpW-7v-sas"/>
                             <constraint firstItem="fiT-av-H8B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wt5-5h-zdx"/>
@@ -705,7 +705,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="4i3-sX-Ygu"/>
         <segue reference="WHa-BU-GqE"/>
-        <segue reference="qSC-YU-YPW"/>
+        <segue reference="ElG-ft-8OB"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AppLogo" width="166.5" height="166.5"/>

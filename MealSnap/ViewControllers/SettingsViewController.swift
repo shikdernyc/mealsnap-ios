@@ -22,6 +22,21 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func handleLogout() {
-        AuthService.logout(){_ in }
+        AuthService.logout(){result in
+            switch(result){
+            case .success:
+                DispatchQueue.main.async {
+                    guard let onboardingVC = self.storyboard?.instantiateViewController(identifier: StoryboardId.OnboardingNavigationController.rawValue) else {
+                        return
+                    }
+                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(controller: onboardingVC)
+                }
+                return
+            case .failure(let error):
+                print(error)
+                AlertComponent.showError(on: self, message: "Unable to logout")
+                return
+            }
+        }
     }
 }
