@@ -16,10 +16,10 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
     
+
     func showError(message: String) -> Void {
         AlertComponent.showError(on: self, message: message)
     }

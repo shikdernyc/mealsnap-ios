@@ -12,7 +12,7 @@ struct TempUserInfo {
     static let password = "P@5sword"
 }
 
-class LoginViewController: UIViewController {    
+class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
