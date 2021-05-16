@@ -39,14 +39,14 @@
 		5A444A59265078E200963E90 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A444A58265078E200963E90 /* UITextView.swift */; };
 		5A444A5F26508FB000963E90 /* CreatePostTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A444A5E26508FB000963E90 /* CreatePostTableViewCells.swift */; };
 		5A476D8D264E052400A5EDAB /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A476D8C264E052400A5EDAB /* UIImageView.swift */; };
-		5A54A82C260B055C00DD4A42 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A54A82A260B055C00DD4A42 /* awsconfiguration.json */; };
-		5A54A82D260B055C00DD4A42 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A54A82B260B055C00DD4A42 /* amplifyconfiguration.json */; };
 		5A55FF1C260AE61A00438984 /* StoryboardId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A55FF1B260AE61A00438984 /* StoryboardId.swift */; };
 		5A5F2CD22637F1BD002087A5 /* UserGalleryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F2CD12637F1BD002087A5 /* UserGalleryError.swift */; };
 		5A5F2CD72637F1FF002087A5 /* UserGalleryAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F2CD62637F1FF002087A5 /* UserGalleryAPIResponse.swift */; };
 		5A5F2CE22637F555002087A5 /* MealSnapAPIPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5F2CE12637F555002087A5 /* MealSnapAPIPageResponse.swift */; };
 		5A734FB32609B8180008B576 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A734FB22609B8180008B576 /* SettingsViewController.swift */; };
 		5A734FBE2609BA520008B576 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A734FBD2609BA520008B576 /* AuthService.swift */; };
+		5A8D46AF2651D0BB00797451 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A8D46AD2651D0BB00797451 /* amplifyconfiguration.json */; };
+		5A8D46B02651D0BB00797451 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A8D46AE2651D0BB00797451 /* awsconfiguration.json */; };
 		5A9475F2260BEF7F00C22186 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9475F1260BEF7F00C22186 /* MainViewController.swift */; };
 		5AA228FC2622C9EA000022D5 /* MealSnapAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA228FB2622C9EA000022D5 /* MealSnapAPIError.swift */; };
 		5AA229012622CA37000022D5 /* MealSnapAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */; };
@@ -119,14 +119,14 @@
 		5A444A58265078E200963E90 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		5A444A5E26508FB000963E90 /* CreatePostTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostTableViewCells.swift; sourceTree = "<group>"; };
 		5A476D8C264E052400A5EDAB /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
-		5A54A82A260B055C00DD4A42 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
-		5A54A82B260B055C00DD4A42 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		5A55FF1B260AE61A00438984 /* StoryboardId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardId.swift; sourceTree = "<group>"; };
 		5A5F2CD12637F1BD002087A5 /* UserGalleryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGalleryError.swift; sourceTree = "<group>"; };
 		5A5F2CD62637F1FF002087A5 /* UserGalleryAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGalleryAPIResponse.swift; sourceTree = "<group>"; };
 		5A5F2CE12637F555002087A5 /* MealSnapAPIPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSnapAPIPageResponse.swift; sourceTree = "<group>"; };
 		5A734FB22609B8180008B576 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5A734FBD2609BA520008B576 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		5A8D46AD2651D0BB00797451 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
+		5A8D46AE2651D0BB00797451 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		5A9475F1260BEF7F00C22186 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5AA228FB2622C9EA000022D5 /* MealSnapAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSnapAPIError.swift; sourceTree = "<group>"; };
 		5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSnapAPIResponse.swift; sourceTree = "<group>"; };
@@ -237,6 +237,8 @@
 		5A40EB2026080CD7002493FA /* MealSnap */ = {
 			isa = PBXGroup;
 			children = (
+				5A8D46AD2651D0BB00797451 /* amplifyconfiguration.json */,
+				5A8D46AE2651D0BB00797451 /* awsconfiguration.json */,
 				5AE6C07B2651A54B00EDF6F5 /* Assets */,
 				5A22A587261F91A10030286C /* Services */,
 				5A55FF1A260AE60300438984 /* Config */,
@@ -248,8 +250,6 @@
 				5A40EB2126080CD7002493FA /* AppDelegate.swift */,
 				5A40EB2326080CD7002493FA /* SceneDelegate.swift */,
 				5A40EB2F26080CD8002493FA /* Info.plist */,
-				5A54A82B260B055C00DD4A42 /* amplifyconfiguration.json */,
-				5A54A82A260B055C00DD4A42 /* awsconfiguration.json */,
 			);
 			path = MealSnap;
 			sourceTree = "<group>";
@@ -495,16 +495,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A54A82C260B055C00DD4A42 /* awsconfiguration.json in Resources */,
 				5A40EB2E26080CD8002493FA /* LaunchScreen.storyboard in Resources */,
 				5A099440264DC97D00F53EE6 /* ImageOnlyTableViewCell.xib in Resources */,
-				5A54A82D260B055C00DD4A42 /* amplifyconfiguration.json in Resources */,
 				5A04A1F22641F11E003FECB1 /* SearchUserTableViewCell.xib in Resources */,
 				5A40EB2B26080CD8002493FA /* Assets.xcassets in Resources */,
 				5A1FC4AC2639E8FC00863359 /* GalleryImageTableViewCell.xib in Resources */,
 				5AE6C07D2651A57100EDF6F5 /* Theme.xcassets in Resources */,
+				5A8D46B02651D0BB00797451 /* awsconfiguration.json in Resources */,
 				5A4423C52647515000A07C13 /* woosh.mp3 in Resources */,
 				5A40EB2926080CD7002493FA /* Main.storyboard in Resources */,
+				5A8D46AF2651D0BB00797451 /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
