@@ -422,11 +422,13 @@
                     <navigationItem key="navigationItem" id="6Ej-BZ-61C">
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="camera" catalog="system" id="3eT-lR-K4H">
+                                <color key="tintColor" name="Theme.Info"/>
                                 <connections>
                                     <segue destination="Xba-rv-hdc" kind="show" id="4i3-sX-Ygu"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="person.crop.circle" catalog="system" id="yn6-s1-2ad">
+                                <color key="tintColor" name="Theme.Secondary"/>
                                 <connections>
                                     <segue destination="S5c-p0-SKx" kind="show" id="WHa-BU-GqE"/>
                                 </connections>
