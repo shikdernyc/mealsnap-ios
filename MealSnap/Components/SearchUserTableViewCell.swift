@@ -29,6 +29,8 @@ class SearchUserTableViewCell: UITableViewCell {
         contentView.alpha = 0
         if((user.firstName != nil) && (user.lastName != nil)) {
             self.displayNameLabel.text = "\(user.firstName!) \(user.lastName!)"
+        }else {
+            self.displayNameLabel.text = user.userName
         }
         UIView.animate(withDuration: 1) {
             self.contentView.alpha = 1

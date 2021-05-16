@@ -8,6 +8,10 @@
 import UIKit
 import AVFoundation
 
+enum GalleryViewControllerError : Error {
+    case UserIsNotSet
+}
+
 class GalleryViewController: UIViewController {
     @IBOutlet weak var galleryTableView: UITableView!
     
@@ -86,6 +90,10 @@ class GalleryViewController: UIViewController {
     }
     
     private func loadInitialData(callback: ((Result<Bool, Error>) -> Void)? = nil) -> Void {
+        guard (self.user != nil) else {
+            callback?(.failure(GalleryViewControllerError.UserIsNotSet))
+            return
+        }
         UserGallery.GetGalleryForUser(userId: self.user!.userId){result in
             switch(result){
             case .success(let gallery):
