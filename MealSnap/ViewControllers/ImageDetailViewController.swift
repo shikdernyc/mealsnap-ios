@@ -10,7 +10,6 @@ import UIKit
 class ImageDetailViewController: UIViewController {
     
     var imageModel: GalleryImage? = nil
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UITextView!
     
@@ -21,7 +20,6 @@ class ImageDetailViewController: UIViewController {
             self.navigationController?.popViewController(animated: true)
             return
         }
-        self.titleLabel.text = imageModel!.title
         self.descriptionLabel.text = imageModel!.description
         self.imageView.setImage(url: imageModel!.imageUrl, delegate: self)
         // Do any additional setup after loading the view.

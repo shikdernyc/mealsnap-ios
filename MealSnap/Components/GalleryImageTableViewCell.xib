@@ -31,13 +31,19 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OjL-MI-ALs">
-                        <rect key="frame" x="8" y="460" width="304" height="28"/>
+                        <rect key="frame" x="8" y="454" width="304" height="24"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like Count" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9C-PO-IKC">
+                                <rect key="frame" x="0.0" y="0.0" width="260" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpM-j0-h16">
-                                <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                <rect key="frame" x="280" y="0.0" width="24" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="Yjr-vp-HYL"/>
-                                    <constraint firstAttribute="width" constant="28" id="qD6-w5-Tyy"/>
+                                    <constraint firstAttribute="height" constant="24" id="Yjr-vp-HYL"/>
+                                    <constraint firstAttribute="width" constant="24" id="qD6-w5-Tyy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Button">
@@ -49,12 +55,6 @@
                                     <action selector="onTapLike:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6DN-4N-4l9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9C-PO-IKC">
-                                <rect key="frame" x="48" y="0.0" width="256" height="28"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                     </stackView>
                 </subviews>
@@ -62,7 +62,7 @@
                     <constraint firstItem="872-cd-xYp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="6Nk-oM-Fah"/>
                     <constraint firstItem="872-cd-xYp" firstAttribute="top" secondItem="oZn-xF-YZI" secondAttribute="bottom" constant="12" id="Dql-Xi-rnp"/>
                     <constraint firstItem="OjL-MI-ALs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="JNo-9X-zka"/>
-                    <constraint firstItem="OjL-MI-ALs" firstAttribute="top" secondItem="872-cd-xYp" secondAttribute="bottom" constant="24" id="Z30-3O-EbE"/>
+                    <constraint firstItem="OjL-MI-ALs" firstAttribute="top" secondItem="872-cd-xYp" secondAttribute="bottom" constant="18" id="mLP-kk-xho"/>
                     <constraint firstItem="oZn-xF-YZI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="npM-QK-wmk"/>
                     <constraint firstAttribute="trailing" secondItem="872-cd-xYp" secondAttribute="trailing" constant="8" id="sAs-0D-ihI"/>
                     <constraint firstAttribute="trailing" secondItem="OjL-MI-ALs" secondAttribute="trailing" constant="8" id="xQl-ak-XhK"/>
@@ -79,7 +79,7 @@
                 <outlet property="likeCountLabel" destination="c9C-PO-IKC" id="MeX-8w-fV1"/>
                 <outlet property="titleLabel" destination="872-cd-xYp" id="c8R-D2-YDs"/>
             </connections>
-            <point key="canvasLocation" x="82.608695652173921" y="58.59375"/>
+            <point key="canvasLocation" x="84" y="54"/>
         </tableViewCell>
     </objects>
     <resources>

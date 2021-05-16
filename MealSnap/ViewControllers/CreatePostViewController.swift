@@ -13,7 +13,7 @@ private enum LayoutTableViewCell {
     case PreviewImage
 }
 
-private class LayoutTableViewUtil {
+private class LayoutTableViewCellUtil {
     private let tableView: UITableView
     
     static let CellId : [LayoutTableViewCell: String] = [
@@ -21,17 +21,17 @@ private class LayoutTableViewUtil {
         .Description: "CreatePostDescriptionTextField",
         .PreviewImage: "CreatePostPreviewImageView"
     ]
-
+    
     static func DequeueCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: LayoutTableViewUtil.CellId[.Title]!, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: LayoutTableViewCellUtil.CellId[.Title]!, for: indexPath)
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: LayoutTableViewUtil.CellId[.Description]!, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: LayoutTableViewCellUtil.CellId[.Description]!, for: indexPath)
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: LayoutTableViewUtil.CellId[.PreviewImage]!, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: LayoutTableViewCellUtil.CellId[.PreviewImage]!, for: indexPath)
             return cell
         }
     }
@@ -55,13 +55,18 @@ private class LayoutTableViewUtil {
 
 class CreatePostViewController: UIViewController {
     @IBOutlet weak var layoutTableView: UITableView!
-    private var layoutUtil : LayoutTableViewUtil!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    private var layoutUtil : LayoutTableViewCellUtil!
+    private var layoutLoading : UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        layoutUtil = LayoutTableViewUtil(tableView: layoutTableView)
+        layoutUtil = LayoutTableViewCellUtil(tableView: layoutTableView)
         layoutTableView.delegate = self
         layoutTableView.dataSource = self
+        layoutTableView.separatorColor = UIColor.clear
+        layoutLoading = LoadingIndicatorAddon.Attach(to: layoutTableView)
+        self.openImagePicker()
     }
     
     private func onPostSuccessful() {
@@ -74,8 +79,9 @@ class CreatePostViewController: UIViewController {
         }
     }
     
-    @IBAction func handleSave() {
-        print("Trying to save")
+    
+    @IBAction func onSavePressed(_ sender: Any) {
+        // TODO: Disable Save Button
         let titleCell = layoutUtil.titleCell()
         let descriptionCell = layoutUtil.descriptionCell()
         let imageCell = layoutUtil.imagePreviewCell()
@@ -92,27 +98,30 @@ class CreatePostViewController: UIViewController {
             return
         }
         guard let imageData = targetImage.jpegData(compressionQuality: 1) else {
-            showError(message: "Something went wrong")
+            self.showError(message: "Something went wrong")
             print("Unable to convert image to Data")
             return
         }
+        self.layoutLoading.startAnimating()
         UserGallery.AddImage(title: titleCell.inputValue(), description: descriptionCell.inputValue(), imageData: imageData) { result in
             switch (result){
             case .success(let galleryImage):
                 print(galleryImage)
                 self.onPostSuccessful()
-                return
             case .failure(let error):
                 switch(error){
                 case .APIError(let message):
                     self.showError(message: message)
-                    return
                 }
+            }
+            DispatchQueue.main.async {
+                self.layoutLoading.stopAnimating()
             }
         }
     }
     
     func showError(message: String) -> Void {
+        print("Showing error")
         AlertComponent.showError(on: self, message: message)
     }
     
@@ -146,7 +155,7 @@ extension CreatePostViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return LayoutTableViewUtil.DequeueCell(tableView: tableView, indexPath: indexPath)
+        return LayoutTableViewCellUtil.DequeueCell(tableView: tableView, indexPath: indexPath)
     }
 }
 

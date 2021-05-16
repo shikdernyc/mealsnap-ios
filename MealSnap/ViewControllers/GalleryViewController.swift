@@ -142,7 +142,7 @@ extension GalleryViewController {
             return
         }
         let position = scrollView.contentOffset.y
-        if position > (galleryTableView.contentSize.height - 600 - scrollView.frame.size.height){
+        if position > (galleryTableView.contentSize.height - 1000 - scrollView.frame.size.height){
             print("Loading More")
             userGallery?.loadMore()
         }

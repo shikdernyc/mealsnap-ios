@@ -19,7 +19,9 @@ class ExploreViewController: UIViewController {
         searchUserTable.register(SearchUserTableViewCell.nib(), forCellReuseIdentifier: SearchUserTableViewCell.ID)
         searchUserTable.delegate = self
         searchUserTable.dataSource = self
+        searchUserTable.separatorColor = UIColor.clear
         usernameInput.delegate = self
+        usernameInput.addBorder()
         self.searchLoadingIndicator = LoadingIndicatorAddon.Attach(to: searchUserTable)
         // Do any additional setup after loading the view.
     }
