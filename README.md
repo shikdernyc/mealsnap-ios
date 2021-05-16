@@ -1,4 +1,5 @@
 # MealSnap iOS App
+Backend: https://github.com/CSCI-40500-77100-Spring-2021/project-10__backend
 
 ## Requirements
 
