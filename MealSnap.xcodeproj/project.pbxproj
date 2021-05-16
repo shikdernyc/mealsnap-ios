@@ -34,6 +34,10 @@
 		5A40EB4426080CD8002493FA /* MealSnapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40EB4326080CD8002493FA /* MealSnapUITests.swift */; };
 		5A4423C52647515000A07C13 /* woosh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5A4423C42647515000A07C13 /* woosh.mp3 */; };
 		5A4423C72647516300A07C13 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4423C62647516300A07C13 /* AudioService.swift */; };
+		5A444A552650681800963E90 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A444A542650681800963E90 /* LoadingIndicator.swift */; };
+		5A444A57265077F200963E90 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A444A56265077F200963E90 /* UITextField.swift */; };
+		5A444A59265078E200963E90 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A444A58265078E200963E90 /* UITextView.swift */; };
+		5A444A5F26508FB000963E90 /* CreatePostTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A444A5E26508FB000963E90 /* CreatePostTableViewCells.swift */; };
 		5A476D8D264E052400A5EDAB /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A476D8C264E052400A5EDAB /* UIImageView.swift */; };
 		5A54A82C260B055C00DD4A42 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A54A82A260B055C00DD4A42 /* awsconfiguration.json */; };
 		5A54A82D260B055C00DD4A42 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A54A82B260B055C00DD4A42 /* amplifyconfiguration.json */; };
@@ -48,6 +52,9 @@
 		5AA229012622CA37000022D5 /* MealSnapAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */; };
 		5ACE48542642293F00975000 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE48532642293F00975000 /* Alert.swift */; };
 		5AD9639A26465A4000E22875 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9639926465A4000E22875 /* ImageDetailViewController.swift */; };
+		5AE6C07D2651A57100EDF6F5 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AE6C07C2651A57100EDF6F5 /* Theme.xcassets */; };
+		5AE6C07F2651B12D00EDF6F5 /* AppUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6C07E2651B12D00EDF6F5 /* AppUIButton.swift */; };
+		5AE6C0812651B2AE00EDF6F5 /* AppUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6C0802651B2AE00EDF6F5 /* AppUITextField.swift */; };
 		5AED5B11264091B600EA6565 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AED5B10264091B600EA6565 /* User.swift */; };
 		5AFC2938261EB1C60058D20C /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC2937261EB1C60058D20C /* CreatePostViewController.swift */; };
 		5AFC2941261ECEE40058D20C /* UserGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC2940261ECEE40058D20C /* UserGallery.swift */; };
@@ -107,6 +114,10 @@
 		5A40EB4526080CD8002493FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A4423C42647515000A07C13 /* woosh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = woosh.mp3; sourceTree = "<group>"; };
 		5A4423C62647516300A07C13 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		5A444A542650681800963E90 /* LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		5A444A56265077F200963E90 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		5A444A58265078E200963E90 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		5A444A5E26508FB000963E90 /* CreatePostTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostTableViewCells.swift; sourceTree = "<group>"; };
 		5A476D8C264E052400A5EDAB /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		5A54A82A260B055C00DD4A42 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		5A54A82B260B055C00DD4A42 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
@@ -121,6 +132,9 @@
 		5AA229002622CA37000022D5 /* MealSnapAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealSnapAPIResponse.swift; sourceTree = "<group>"; };
 		5ACE48532642293F00975000 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		5AD9639926465A4000E22875 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		5AE6C07C2651A57100EDF6F5 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
+		5AE6C07E2651B12D00EDF6F5 /* AppUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUIButton.swift; sourceTree = "<group>"; };
+		5AE6C0802651B2AE00EDF6F5 /* AppUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUITextField.swift; sourceTree = "<group>"; };
 		5AED5B10264091B600EA6565 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5AFC2937261EB1C60058D20C /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		5AFC2940261ECEE40058D20C /* UserGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGallery.swift; sourceTree = "<group>"; };
@@ -175,14 +189,15 @@
 		5A13366B26093746008CC957 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5A444A532650680900963E90 /* Addons */,
 				5A476D8B264E04DB00A5EDAB /* Native */,
 				5A1FC4A92639E8FC00863359 /* GalleryImageTableViewCell.swift */,
 				5A1FC4AA2639E8FC00863359 /* GalleryImageTableViewCell.xib */,
 				5A04A1EF2641F11E003FECB1 /* SearchUserTableViewCell.swift */,
 				5A04A1F02641F11E003FECB1 /* SearchUserTableViewCell.xib */,
-				5ACE48532642293F00975000 /* Alert.swift */,
 				5A09943D264DC97D00F53EE6 /* ImageOnlyTableViewCell.swift */,
 				5A09943E264DC97D00F53EE6 /* ImageOnlyTableViewCell.xib */,
+				5A444A5E26508FB000963E90 /* CreatePostTableViewCells.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -222,8 +237,8 @@
 		5A40EB2026080CD7002493FA /* MealSnap */ = {
 			isa = PBXGroup;
 			children = (
+				5AE6C07B2651A54B00EDF6F5 /* Assets */,
 				5A22A587261F91A10030286C /* Services */,
-				5A40EB2A26080CD8002493FA /* Assets.xcassets */,
 				5A55FF1A260AE60300438984 /* Config */,
 				5A734FBA2609BA160008B576 /* Models */,
 				5A13366B26093746008CC957 /* Components */,
@@ -266,6 +281,15 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
+		5A444A532650680900963E90 /* Addons */ = {
+			isa = PBXGroup;
+			children = (
+				5ACE48532642293F00975000 /* Alert.swift */,
+				5A444A542650681800963E90 /* LoadingIndicator.swift */,
+			);
+			path = Addons;
+			sourceTree = "<group>";
+		};
 		5A476D8A264DFD6000A5EDAB /* MealSnapAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +305,10 @@
 			isa = PBXGroup;
 			children = (
 				5A476D8C264E052400A5EDAB /* UIImageView.swift */,
+				5A444A56265077F200963E90 /* UITextField.swift */,
+				5A444A58265078E200963E90 /* UITextView.swift */,
+				5AE6C07E2651B12D00EDF6F5 /* AppUIButton.swift */,
+				5AE6C0802651B2AE00EDF6F5 /* AppUITextField.swift */,
 			);
 			path = Native;
 			sourceTree = "<group>";
@@ -328,6 +356,15 @@
 				5AD9639926465A4000E22875 /* ImageDetailViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5AE6C07B2651A54B00EDF6F5 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5A40EB2A26080CD8002493FA /* Assets.xcassets */,
+				5AE6C07C2651A57100EDF6F5 /* Theme.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		5AFC293F261ECEB40058D20C /* UserGallery */ = {
@@ -465,6 +502,7 @@
 				5A04A1F22641F11E003FECB1 /* SearchUserTableViewCell.xib in Resources */,
 				5A40EB2B26080CD8002493FA /* Assets.xcassets in Resources */,
 				5A1FC4AC2639E8FC00863359 /* GalleryImageTableViewCell.xib in Resources */,
+				5AE6C07D2651A57100EDF6F5 /* Theme.xcassets in Resources */,
 				5A4423C52647515000A07C13 /* woosh.mp3 in Resources */,
 				5A40EB2926080CD7002493FA /* Main.storyboard in Resources */,
 			);
@@ -601,21 +639,27 @@
 				5ACE48542642293F00975000 /* Alert.swift in Sources */,
 				5A55FF1C260AE61A00438984 /* StoryboardId.swift in Sources */,
 				5A9475F2260BEF7F00C22186 /* MainViewController.swift in Sources */,
+				5AE6C0812651B2AE00EDF6F5 /* AppUITextField.swift in Sources */,
 				5A2B763326390E5400377272 /* Gallery.swift in Sources */,
 				5A476D8D264E052400A5EDAB /* UIImageView.swift in Sources */,
 				5A22A595261F92740030286C /* Services.swift in Sources */,
 				5A1FC4AB2639E8FC00863359 /* GalleryImageTableViewCell.swift in Sources */,
 				5A04A1F12641F11E003FECB1 /* SearchUserTableViewCell.swift in Sources */,
+				5A444A552650681800963E90 /* LoadingIndicator.swift in Sources */,
 				5A22A58A261F91EA0030286C /* MealSnapAPI.swift in Sources */,
+				5A444A57265077F200963E90 /* UITextField.swift in Sources */,
 				5AA229012622CA37000022D5 /* MealSnapAPIResponse.swift in Sources */,
 				5AFC2941261ECEE40058D20C /* UserGallery.swift in Sources */,
 				5A5F2CD22637F1BD002087A5 /* UserGalleryError.swift in Sources */,
 				5A13365F26092710008CC957 /* LoginViewController.swift in Sources */,
+				5AE6C07F2651B12D00EDF6F5 /* AppUIButton.swift in Sources */,
 				5A40EB2626080CD7002493FA /* Onboarding.swift in Sources */,
 				5AD9639A26465A4000E22875 /* ImageDetailViewController.swift in Sources */,
+				5A444A59265078E200963E90 /* UITextView.swift in Sources */,
 				5A2E9D6D2609B147003D37C2 /* ExploreViewController.swift in Sources */,
 				5A5F2CD72637F1FF002087A5 /* UserGalleryAPIResponse.swift in Sources */,
 				5A13366726093166008CC957 /* SignupViewController.swift in Sources */,
+				5A444A5F26508FB000963E90 /* CreatePostTableViewCells.swift in Sources */,
 				5A40EB2226080CD7002493FA /* AppDelegate.swift in Sources */,
 				5A40EB2426080CD7002493FA /* SceneDelegate.swift in Sources */,
 				5A4423C72647516300A07C13 /* AudioService.swift in Sources */,

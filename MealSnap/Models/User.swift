@@ -32,6 +32,10 @@ enum UserError : Error {
 
 class User {
     static func FindUser(query: String, callback: @escaping ((Result<[UserSummary], UserError>) -> Void)) {
+        if query.count == 0 {
+            callback(.success([]))
+            return
+        }
         let url = "/search/user?query=" + query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!;
         MealSnapAPI.GetRequest(route: url) {result in
             switch(result){

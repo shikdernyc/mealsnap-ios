@@ -26,8 +26,14 @@ class SearchUserTableViewCell: UITableViewCell {
     
     func configure(with user: UserSummary) {
         self.usernameLabel.text = user.userName
+        contentView.alpha = 0
         if((user.firstName != nil) && (user.lastName != nil)) {
             self.displayNameLabel.text = "\(user.firstName!) \(user.lastName!)"
+        }else {
+            self.displayNameLabel.text = user.userName
+        }
+        UIView.animate(withDuration: 1) {
+            self.contentView.alpha = 1
         }
     }
     

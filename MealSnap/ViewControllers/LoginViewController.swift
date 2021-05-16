@@ -13,8 +13,6 @@ struct TempUserInfo {
 }
 
 class LoginViewController: UIViewController {
-    static let StoryboardId = "login_vc"
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
@@ -58,8 +56,13 @@ class LoginViewController: UIViewController {
                 // TODO: Set Error Message
                 self.showError(message: error.errorDescription)
                 return
-            default:
-                return
+            case .success:
+                DispatchQueue.main.async {
+                    guard let rootAuthController = self.storyboard?.instantiateViewController(identifier: StoryboardId.AuthTabNavigationController.rawValue) else {
+                        return
+                    }
+                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(controller: rootAuthController)
+                }
             }
         };
     }
